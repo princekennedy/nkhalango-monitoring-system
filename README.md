@@ -12,7 +12,7 @@ demo forest - trees
 
 equipment
 
-## system
+## systems
 
 - main Site
 - admin site
@@ -28,5 +28,18 @@ equipment
 
 - Main Folder (NMS)
   - main site
+    - JS
+      - React
+      - jQuery
+    - Html
+    - Css
+      - bootstrap
   - admin site
-  - system software
+    - JS
+    - Html
+    - Css
+    - Php
+      - Laravel
+    - MySQL
+  - embedded software
+    - Python
