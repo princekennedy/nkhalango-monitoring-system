@@ -43,3 +43,8 @@ equipment
     - MySQL
   - embedded software
     - Python
+
+## soil properties link
+
+-- https://learn.eartheasy.com/articles/know-your-garden-soil-how-to-make-the-most-of-your-soil-type/
+-- https://dbdesigner.page.link/wDpAMmktRe1nnmyV8
