@@ -4,10 +4,9 @@ import React from "react";
 import { render } from "react-dom";
 import { createInertiaApp } from "@inertiajs/inertia-react";
 import { InertiaProgress } from "@inertiajs/progress";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const appName =
-    window.document.getElementsByTagName("title")[0]?.innerText || "Laravel";
+    window.document.getElementsByTagName("title")[0]?.innerText || "NMS";
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

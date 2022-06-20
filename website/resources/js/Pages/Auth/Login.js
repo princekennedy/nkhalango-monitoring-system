@@ -1,94 +1,81 @@
-import React, { useEffect } from 'react';
-import Button from '@/Components/Button';
-import Checkbox from '@/Components/Checkbox';
-import Guest from '@/Layouts/Guest';
-import Input from '@/Components/Input';
-import Label from '@/Components/Label';
-import ValidationErrors from '@/Components/ValidationErrors';
+import React from 'react';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
+import LoadingButton from '@/Components/LoadingButton';
+import TextInput from '@/Components/TextInput';
+import Guest from '@/Layouts/Guest';
 
-export default function Login({ status, canResetPassword }) {
-    const { data, setData, post, processing, errors, reset } = useForm({
+export default () => {
+    const { data, setData, errors, post, processing } = useForm({
         email: '',
         password: '',
-        remember: '',
+        remember: true
     });
 
-    useEffect(() => {
-        return () => {
-            reset('password');
-        };
-    }, []);
-
-    const onHandleChange = (event) => {
-        setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value);
-    };
-
-    const submit = (e) => {
+    function handleSubmit(e) {
         e.preventDefault();
-
         post(route('login'));
-    };
+    }
 
     return (
         <Guest>
-            <Head title="Log in" />
+            <Head title="Login" />
 
-            {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
-
-            <ValidationErrors errors={errors} />
-
-            <form onSubmit={submit}>
-                <div>
-                    <Label forInput="email" value="Email" />
-
-                    <Input
-                        type="text"
+            <form
+                onSubmit={handleSubmit}
+                className="mt-4 overflow-hidden bg-white rounded-lg shadow-xl"
+            >
+                <div className="px-10 py-12">
+                    <h1 className="text-3xl font-bold text-center text-gray-600">Nkhalango Monitoring System</h1>
+                    <div className="w-24 mx-auto mt-6 border-b-2" />
+                    <TextInput
+                        className="mt-10 min-w-full"
+                        label="Email"
                         name="email"
+                        type="email"
+                        placeholder="Enter email or username"
+                        errors={errors.email}
                         value={data.email}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
-                        isFocused={true}
-                        handleChange={onHandleChange}
+                        onChange={e => setData('email', e.target.value)}
                     />
-                </div>
-
-                <div className="mt-4">
-                    <Label forInput="password" value="Password" />
-
-                    <Input
-                        type="password"
+                    <TextInput
+                        className="mt-6"
+                        label="Password"
                         name="password"
+                        type="password"
+                        placeholder="Enter password"
+                        errors={errors.password}
                         value={data.password}
-                        className="mt-1 block w-full"
-                        autoComplete="current-password"
-                        handleChange={onHandleChange}
+                        onChange={e => setData('password', e.target.value)}
                     />
-                </div>
-
-                <div className="block mt-4">
-                    <label className="flex items-center">
-                        <Checkbox name="remember" value={data.remember} handleChange={onHandleChange} />
-
-                        <span className="ml-2 text-sm text-gray-600">Remember me</span>
+                    <label
+                        className="flex items-center mt-6 select-none"
+                        htmlFor="remember"
+                    >
+                        <input
+                            name="remember"
+                            id="remember"
+                            className="mr-1"
+                            type="checkbox"
+                            checked={data.remember}
+                            onChange={e => setData('remember', e.target.checked)}
+                        />
+                        <span className="text-sm">Remember Me</span>
                     </label>
                 </div>
+                <div className="flex items-center justify-between px-10 py-4 bg-gray-100 border-t border-gray-200">
+                    <Link href={route('password.request')} className="text-sm text-gray-600 hover:text-gray-900">
+                        Forgot password?
+                    </Link>
 
-                <div className="flex items-center justify-end mt-4">
-                    {canResetPassword && (
-                        <Link
-                            href={route('password.request')}
-                            className="underline text-sm text-gray-600 hover:text-gray-900"
-                        >
-                            Forgot your password?
-                        </Link>
-                    )}
-
-                    <Button className="ml-4" processing={processing}>
-                        Log in
-                    </Button>
+                    <LoadingButton
+                        type="submit"
+                        loading={processing}
+                        className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
+                    >
+                        Login
+                    </LoadingButton>
                 </div>
             </form>
         </Guest>
     );
-}
+};
