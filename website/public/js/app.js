@@ -3479,10 +3479,10 @@ function VerifyEmail(_ref) {
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Dashboard.js":
-/*!*****************************************!*\
-  !*** ./resources/js/Pages/Dashboard.js ***!
-  \*****************************************/
+/***/ "./resources/js/Pages/Dashboard/Index.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Index.js ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3527,6 +3527,16 @@ function Dashboard(props) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Home.js":
+/*!************************************!*\
+  !*** ./resources/js/Pages/Home.js ***!
+  \************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
 /***/ "./resources/js/app.jsx":
 /*!******************************!*\
   !*** ./resources/js/app.jsx ***!
@@ -3556,6 +3566,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+_inertiajs_progress__WEBPACK_IMPORTED_MODULE_4__.InertiaProgress.init({
+  color: "#198d19",
+  showSpinner: true
+});
 var appName = ((_window$document$getE = window.document.getElementsByTagName("title")[0]) === null || _window$document$getE === void 0 ? void 0 : _window$document$getE.innerText) || "NMS";
 (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.createInertiaApp)({
   title: function title(_title) {
@@ -3570,9 +3584,6 @@ var appName = ((_window$document$getE = window.document.getElementsByTagName("ti
         props = _ref.props;
     return (0,react_dom__WEBPACK_IMPORTED_MODULE_2__.render)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(App, _objectSpread({}, props)), el);
   }
-});
-_inertiajs_progress__WEBPACK_IMPORTED_MODULE_4__.InertiaProgress.init({
-  color: "#4B5563"
 });
 
 /***/ }),
@@ -56851,8 +56862,10 @@ var map = {
 	"./Auth/ResetPassword.js": "./resources/js/Pages/Auth/ResetPassword.js",
 	"./Auth/VerifyEmail": "./resources/js/Pages/Auth/VerifyEmail.js",
 	"./Auth/VerifyEmail.js": "./resources/js/Pages/Auth/VerifyEmail.js",
-	"./Dashboard": "./resources/js/Pages/Dashboard.js",
-	"./Dashboard.js": "./resources/js/Pages/Dashboard.js"
+	"./Dashboard/Index": "./resources/js/Pages/Dashboard/Index.js",
+	"./Dashboard/Index.js": "./resources/js/Pages/Dashboard/Index.js",
+	"./Home": "./resources/js/Pages/Home.js",
+	"./Home.js": "./resources/js/Pages/Home.js"
 };
 
 
