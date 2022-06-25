@@ -5,6 +5,11 @@ import { render } from "react-dom";
 import { createInertiaApp } from "@inertiajs/inertia-react";
 import { InertiaProgress } from "@inertiajs/progress";
 
+InertiaProgress.init({
+    color: "#198d19",
+    showSpinner: true,
+});
+
 const appName =
     window.document.getElementsByTagName("title")[0]?.innerText || "NMS";
 
@@ -15,5 +20,3 @@ createInertiaApp({
         return render(<App {...props} />, el);
     },
 });
-
-InertiaProgress.init({ color: "#4B5563" });
