@@ -3479,6 +3479,36 @@ function VerifyEmail(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Dashboard/Create.js":
+/*!************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Create.js ***!
+  \************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Edit.js":
+/*!**********************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Edit.js ***!
+  \**********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Index copy.js":
+/*!****************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Index copy.js ***!
+  \****************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Dashboard/Index.js":
 /*!***********************************************!*\
   !*** ./resources/js/Pages/Dashboard/Index.js ***!
@@ -3527,10 +3557,553 @@ function Dashboard(props) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Dashboard/Show.js":
+/*!**********************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Show.js ***!
+  \**********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Error.js":
+/*!*************************************!*\
+  !*** ./resources/js/Pages/Error.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+ // import { usePage } from '@inertiajs/inertia-react';
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (_ref) {
+  var status = _ref.status;
+  // const { status } = usePage().props;
+  var title = {
+    503: '503: Service Unavailable',
+    500: '500: Server Error',
+    404: '404: Page Not Found',
+    403: '403: Forbidden'
+  }[status];
+  var description = {
+    503: 'Sorry, we are doing some maintenance. Please check back soon.',
+    500: 'Whoops, something went wrong on our servers.',
+    404: 'Sorry, the page you are looking for could not be found.',
+    403: 'Sorry, you are forbidden from accessing this page.'
+  }[status];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "flex items-center justify-center min-h-screen p-5 text-indigo-100 bg-indigo-800",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Head, {
+      title: title
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "w-full max-w-md",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+        className: "text-3xl",
+        children: title
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        className: "mt-3 text-lg leading-tight",
+        children: description
+      })]
+    })]
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/Pages/FireAlarm/Create.js":
+/*!************************************************!*\
+  !*** ./resources/js/Pages/FireAlarm/Create.js ***!
+  \************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/FireAlarm/Edit.js":
+/*!**********************************************!*\
+  !*** ./resources/js/Pages/FireAlarm/Edit.js ***!
+  \**********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/FireAlarm/Index.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Pages/FireAlarm/Index.js ***!
+  \***********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/FireAlarm/Show.js":
+/*!**********************************************!*\
+  !*** ./resources/js/Pages/FireAlarm/Show.js ***!
+  \**********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Home.js":
 /*!************************************!*\
   !*** ./resources/js/Pages/Home.js ***!
   \************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/News/Create.js":
+/*!*******************************************!*\
+  !*** ./resources/js/Pages/News/Create.js ***!
+  \*******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/News/Edit.js":
+/*!*****************************************!*\
+  !*** ./resources/js/Pages/News/Edit.js ***!
+  \*****************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/News/Index.js":
+/*!******************************************!*\
+  !*** ./resources/js/Pages/News/Index.js ***!
+  \******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/News/Show.js":
+/*!*****************************************!*\
+  !*** ./resources/js/Pages/News/Show.js ***!
+  \*****************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Population/Create.js":
+/*!*************************************************!*\
+  !*** ./resources/js/Pages/Population/Create.js ***!
+  \*************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Population/Edit.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Pages/Population/Edit.js ***!
+  \***********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Population/Index.js":
+/*!************************************************!*\
+  !*** ./resources/js/Pages/Population/Index.js ***!
+  \************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Population/Show.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Pages/Population/Show.js ***!
+  \***********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Power/Create.js":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Power/Create.js ***!
+  \********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Power/Edit.js":
+/*!******************************************!*\
+  !*** ./resources/js/Pages/Power/Edit.js ***!
+  \******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Power/Index.js":
+/*!*******************************************!*\
+  !*** ./resources/js/Pages/Power/Index.js ***!
+  \*******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Power/Show.js":
+/*!******************************************!*\
+  !*** ./resources/js/Pages/Power/Show.js ***!
+  \******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Role/Create.js":
+/*!*******************************************!*\
+  !*** ./resources/js/Pages/Role/Create.js ***!
+  \*******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Role/Edit.js":
+/*!*****************************************!*\
+  !*** ./resources/js/Pages/Role/Edit.js ***!
+  \*****************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Role/Index.js":
+/*!******************************************!*\
+  !*** ./resources/js/Pages/Role/Index.js ***!
+  \******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Role/Show.js":
+/*!*****************************************!*\
+  !*** ./resources/js/Pages/Role/Show.js ***!
+  \*****************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/RolePermission/Create.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/Pages/RolePermission/Create.js ***!
+  \*****************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/RolePermission/Edit.js":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/RolePermission/Edit.js ***!
+  \***************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/RolePermission/Index.js":
+/*!****************************************************!*\
+  !*** ./resources/js/Pages/RolePermission/Index.js ***!
+  \****************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/RolePermission/Show.js":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/RolePermission/Show.js ***!
+  \***************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Soil/Create.js":
+/*!*******************************************!*\
+  !*** ./resources/js/Pages/Soil/Create.js ***!
+  \*******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Soil/Edit.js":
+/*!*****************************************!*\
+  !*** ./resources/js/Pages/Soil/Edit.js ***!
+  \*****************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Soil/Index.js":
+/*!******************************************!*\
+  !*** ./resources/js/Pages/Soil/Index.js ***!
+  \******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Soil/Show.js":
+/*!*****************************************!*\
+  !*** ./resources/js/Pages/Soil/Show.js ***!
+  \*****************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/SoilProperty/Create.js":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/SoilProperty/Create.js ***!
+  \***************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/SoilProperty/Edit.js":
+/*!*************************************************!*\
+  !*** ./resources/js/Pages/SoilProperty/Edit.js ***!
+  \*************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/SoilProperty/Index.js":
+/*!**************************************************!*\
+  !*** ./resources/js/Pages/SoilProperty/Index.js ***!
+  \**************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/SoilProperty/Show.js":
+/*!*************************************************!*\
+  !*** ./resources/js/Pages/SoilProperty/Show.js ***!
+  \*************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Status/Create.js":
+/*!*********************************************!*\
+  !*** ./resources/js/Pages/Status/Create.js ***!
+  \*********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Status/Edit.js":
+/*!*******************************************!*\
+  !*** ./resources/js/Pages/Status/Edit.js ***!
+  \*******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Status/Index.js":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Status/Index.js ***!
+  \********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Status/Show.js":
+/*!*******************************************!*\
+  !*** ./resources/js/Pages/Status/Show.js ***!
+  \*******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/TreeSpecies/Create.js":
+/*!**************************************************!*\
+  !*** ./resources/js/Pages/TreeSpecies/Create.js ***!
+  \**************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/TreeSpecies/Edit.js":
+/*!************************************************!*\
+  !*** ./resources/js/Pages/TreeSpecies/Edit.js ***!
+  \************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/TreeSpecies/Index.js":
+/*!*************************************************!*\
+  !*** ./resources/js/Pages/TreeSpecies/Index.js ***!
+  \*************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/TreeSpecies/Show.js":
+/*!************************************************!*\
+  !*** ./resources/js/Pages/TreeSpecies/Show.js ***!
+  \************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Weather/Create.js":
+/*!**********************************************!*\
+  !*** ./resources/js/Pages/Weather/Create.js ***!
+  \**********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Weather/Edit.js":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Weather/Edit.js ***!
+  \********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Weather/Index.js":
+/*!*********************************************!*\
+  !*** ./resources/js/Pages/Weather/Index.js ***!
+  \*********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Weather/Show.js":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Weather/Show.js ***!
+  \********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/user/Create.js":
+/*!*******************************************!*\
+  !*** ./resources/js/Pages/user/Create.js ***!
+  \*******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/user/Edit.js":
+/*!*****************************************!*\
+  !*** ./resources/js/Pages/user/Edit.js ***!
+  \*****************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/user/Index.js":
+/*!******************************************!*\
+  !*** ./resources/js/Pages/user/Index.js ***!
+  \******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/user/Show.js":
+/*!*****************************************!*\
+  !*** ./resources/js/Pages/user/Show.js ***!
+  \*****************************************/
 /***/ (() => {
 
 
@@ -56862,10 +57435,116 @@ var map = {
 	"./Auth/ResetPassword.js": "./resources/js/Pages/Auth/ResetPassword.js",
 	"./Auth/VerifyEmail": "./resources/js/Pages/Auth/VerifyEmail.js",
 	"./Auth/VerifyEmail.js": "./resources/js/Pages/Auth/VerifyEmail.js",
+	"./Dashboard/Create": "./resources/js/Pages/Dashboard/Create.js",
+	"./Dashboard/Create.js": "./resources/js/Pages/Dashboard/Create.js",
+	"./Dashboard/Edit": "./resources/js/Pages/Dashboard/Edit.js",
+	"./Dashboard/Edit.js": "./resources/js/Pages/Dashboard/Edit.js",
 	"./Dashboard/Index": "./resources/js/Pages/Dashboard/Index.js",
+	"./Dashboard/Index copy": "./resources/js/Pages/Dashboard/Index copy.js",
+	"./Dashboard/Index copy.js": "./resources/js/Pages/Dashboard/Index copy.js",
 	"./Dashboard/Index.js": "./resources/js/Pages/Dashboard/Index.js",
+	"./Dashboard/Show": "./resources/js/Pages/Dashboard/Show.js",
+	"./Dashboard/Show.js": "./resources/js/Pages/Dashboard/Show.js",
+	"./Error": "./resources/js/Pages/Error.js",
+	"./Error.js": "./resources/js/Pages/Error.js",
+	"./FireAlarm/Create": "./resources/js/Pages/FireAlarm/Create.js",
+	"./FireAlarm/Create.js": "./resources/js/Pages/FireAlarm/Create.js",
+	"./FireAlarm/Edit": "./resources/js/Pages/FireAlarm/Edit.js",
+	"./FireAlarm/Edit.js": "./resources/js/Pages/FireAlarm/Edit.js",
+	"./FireAlarm/Index": "./resources/js/Pages/FireAlarm/Index.js",
+	"./FireAlarm/Index.js": "./resources/js/Pages/FireAlarm/Index.js",
+	"./FireAlarm/Show": "./resources/js/Pages/FireAlarm/Show.js",
+	"./FireAlarm/Show.js": "./resources/js/Pages/FireAlarm/Show.js",
 	"./Home": "./resources/js/Pages/Home.js",
-	"./Home.js": "./resources/js/Pages/Home.js"
+	"./Home.js": "./resources/js/Pages/Home.js",
+	"./News/Create": "./resources/js/Pages/News/Create.js",
+	"./News/Create.js": "./resources/js/Pages/News/Create.js",
+	"./News/Edit": "./resources/js/Pages/News/Edit.js",
+	"./News/Edit.js": "./resources/js/Pages/News/Edit.js",
+	"./News/Index": "./resources/js/Pages/News/Index.js",
+	"./News/Index.js": "./resources/js/Pages/News/Index.js",
+	"./News/Show": "./resources/js/Pages/News/Show.js",
+	"./News/Show.js": "./resources/js/Pages/News/Show.js",
+	"./Population/Create": "./resources/js/Pages/Population/Create.js",
+	"./Population/Create.js": "./resources/js/Pages/Population/Create.js",
+	"./Population/Edit": "./resources/js/Pages/Population/Edit.js",
+	"./Population/Edit.js": "./resources/js/Pages/Population/Edit.js",
+	"./Population/Index": "./resources/js/Pages/Population/Index.js",
+	"./Population/Index.js": "./resources/js/Pages/Population/Index.js",
+	"./Population/Show": "./resources/js/Pages/Population/Show.js",
+	"./Population/Show.js": "./resources/js/Pages/Population/Show.js",
+	"./Power/Create": "./resources/js/Pages/Power/Create.js",
+	"./Power/Create.js": "./resources/js/Pages/Power/Create.js",
+	"./Power/Edit": "./resources/js/Pages/Power/Edit.js",
+	"./Power/Edit.js": "./resources/js/Pages/Power/Edit.js",
+	"./Power/Index": "./resources/js/Pages/Power/Index.js",
+	"./Power/Index.js": "./resources/js/Pages/Power/Index.js",
+	"./Power/Show": "./resources/js/Pages/Power/Show.js",
+	"./Power/Show.js": "./resources/js/Pages/Power/Show.js",
+	"./Role/Create": "./resources/js/Pages/Role/Create.js",
+	"./Role/Create.js": "./resources/js/Pages/Role/Create.js",
+	"./Role/Edit": "./resources/js/Pages/Role/Edit.js",
+	"./Role/Edit.js": "./resources/js/Pages/Role/Edit.js",
+	"./Role/Index": "./resources/js/Pages/Role/Index.js",
+	"./Role/Index.js": "./resources/js/Pages/Role/Index.js",
+	"./Role/Show": "./resources/js/Pages/Role/Show.js",
+	"./Role/Show.js": "./resources/js/Pages/Role/Show.js",
+	"./RolePermission/Create": "./resources/js/Pages/RolePermission/Create.js",
+	"./RolePermission/Create.js": "./resources/js/Pages/RolePermission/Create.js",
+	"./RolePermission/Edit": "./resources/js/Pages/RolePermission/Edit.js",
+	"./RolePermission/Edit.js": "./resources/js/Pages/RolePermission/Edit.js",
+	"./RolePermission/Index": "./resources/js/Pages/RolePermission/Index.js",
+	"./RolePermission/Index.js": "./resources/js/Pages/RolePermission/Index.js",
+	"./RolePermission/Show": "./resources/js/Pages/RolePermission/Show.js",
+	"./RolePermission/Show.js": "./resources/js/Pages/RolePermission/Show.js",
+	"./Soil/Create": "./resources/js/Pages/Soil/Create.js",
+	"./Soil/Create.js": "./resources/js/Pages/Soil/Create.js",
+	"./Soil/Edit": "./resources/js/Pages/Soil/Edit.js",
+	"./Soil/Edit.js": "./resources/js/Pages/Soil/Edit.js",
+	"./Soil/Index": "./resources/js/Pages/Soil/Index.js",
+	"./Soil/Index.js": "./resources/js/Pages/Soil/Index.js",
+	"./Soil/Show": "./resources/js/Pages/Soil/Show.js",
+	"./Soil/Show.js": "./resources/js/Pages/Soil/Show.js",
+	"./SoilProperty/Create": "./resources/js/Pages/SoilProperty/Create.js",
+	"./SoilProperty/Create.js": "./resources/js/Pages/SoilProperty/Create.js",
+	"./SoilProperty/Edit": "./resources/js/Pages/SoilProperty/Edit.js",
+	"./SoilProperty/Edit.js": "./resources/js/Pages/SoilProperty/Edit.js",
+	"./SoilProperty/Index": "./resources/js/Pages/SoilProperty/Index.js",
+	"./SoilProperty/Index.js": "./resources/js/Pages/SoilProperty/Index.js",
+	"./SoilProperty/Show": "./resources/js/Pages/SoilProperty/Show.js",
+	"./SoilProperty/Show.js": "./resources/js/Pages/SoilProperty/Show.js",
+	"./Status/Create": "./resources/js/Pages/Status/Create.js",
+	"./Status/Create.js": "./resources/js/Pages/Status/Create.js",
+	"./Status/Edit": "./resources/js/Pages/Status/Edit.js",
+	"./Status/Edit.js": "./resources/js/Pages/Status/Edit.js",
+	"./Status/Index": "./resources/js/Pages/Status/Index.js",
+	"./Status/Index.js": "./resources/js/Pages/Status/Index.js",
+	"./Status/Show": "./resources/js/Pages/Status/Show.js",
+	"./Status/Show.js": "./resources/js/Pages/Status/Show.js",
+	"./TreeSpecies/Create": "./resources/js/Pages/TreeSpecies/Create.js",
+	"./TreeSpecies/Create.js": "./resources/js/Pages/TreeSpecies/Create.js",
+	"./TreeSpecies/Edit": "./resources/js/Pages/TreeSpecies/Edit.js",
+	"./TreeSpecies/Edit.js": "./resources/js/Pages/TreeSpecies/Edit.js",
+	"./TreeSpecies/Index": "./resources/js/Pages/TreeSpecies/Index.js",
+	"./TreeSpecies/Index.js": "./resources/js/Pages/TreeSpecies/Index.js",
+	"./TreeSpecies/Show": "./resources/js/Pages/TreeSpecies/Show.js",
+	"./TreeSpecies/Show.js": "./resources/js/Pages/TreeSpecies/Show.js",
+	"./Weather/Create": "./resources/js/Pages/Weather/Create.js",
+	"./Weather/Create.js": "./resources/js/Pages/Weather/Create.js",
+	"./Weather/Edit": "./resources/js/Pages/Weather/Edit.js",
+	"./Weather/Edit.js": "./resources/js/Pages/Weather/Edit.js",
+	"./Weather/Index": "./resources/js/Pages/Weather/Index.js",
+	"./Weather/Index.js": "./resources/js/Pages/Weather/Index.js",
+	"./Weather/Show": "./resources/js/Pages/Weather/Show.js",
+	"./Weather/Show.js": "./resources/js/Pages/Weather/Show.js",
+	"./user/Create": "./resources/js/Pages/user/Create.js",
+	"./user/Create.js": "./resources/js/Pages/user/Create.js",
+	"./user/Edit": "./resources/js/Pages/user/Edit.js",
+	"./user/Edit.js": "./resources/js/Pages/user/Edit.js",
+	"./user/Index": "./resources/js/Pages/user/Index.js",
+	"./user/Index.js": "./resources/js/Pages/user/Index.js",
+	"./user/Show": "./resources/js/Pages/user/Show.js",
+	"./user/Show.js": "./resources/js/Pages/user/Show.js"
 };
 
 

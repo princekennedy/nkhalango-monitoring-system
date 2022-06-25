@@ -1064,6 +1064,9 @@ select {
 .p-12 {
   padding: 3rem;
 }
+.p-5 {
+  padding: 1.25rem;
+}
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1287,6 +1290,10 @@ select {
 .text-green-600 {
   --tw-text-opacity: 1;
   color: rgb(56 161 105 / var(--tw-text-opacity));
+}
+.text-indigo-100 {
+  --tw-text-opacity: 1;
+  color: rgb(235 244 255 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
