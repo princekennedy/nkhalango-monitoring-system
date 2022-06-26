@@ -1,26 +1,53 @@
 import React, { useState } from 'react';
-import { InertiaLink } from '@inertiajs/inertia-react';
-import Logo from '@/Components/Logo';
-import MainMenu from './MainMenu';
+import { InertiaLink, usePage } from '@inertiajs/inertia-react';
+import Icon from '@/Components/Icon';
 
 export default () => {
+  const { auth } = usePage().props;
   const [menuOpened, setMenuOpened] = useState(false);
+
   return (
-    <div className="flex items-center justify-between px-6 py-4 bg-indigo-900 md:flex-shrink-0 md:w-56 md:justify-center">
-      <InertiaLink className="mt-1" href="/">
-        <Logo className="text-white fill-current" width="120" height="28" />
-      </InertiaLink>
-      <div className="relative md:hidden">
-        <svg
+    <div className="flex items-center justify-between w-full p-4 text-sm bg-white border-b md:py-0 md:px-12 d:text-md">
+      <div className="mt-1 mr-4">Chikangawa</div>
+      <div className="relative">
+        <div
+          className="flex items-center cursor-pointer select-none group"
           onClick={() => setMenuOpened(true)}
-          className="w-6 h-6 text-white cursor-pointer fill-current"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
         >
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-        </svg>
-        <div className={`${menuOpened ? '' : 'hidden'} absolute right-0 z-20`}>
-          <MainMenu className="relative z-20 px-8 py-4 pb-2 mt-2 bg-indigo-800 rounded shadow-lg" />
+          <div className="mr-1 text-gray-800 whitespace-nowrap group-hover:text-indigo-600 focus:text-indigo-600">
+            <span>{auth.user.first_name}</span>
+            <span className="hidden ml-1 md:inline">{auth.user.last_name}</span>
+          </div>
+          <Icon
+            className="w-5 h-5 text-gray-800 fill-current group-hover:text-indigo-600 focus:text-indigo-600"
+            name="cheveron-down"
+          />
+        </div>
+        <div className={menuOpened ? '' : 'hidden'}>
+          <div className="absolute top-0 right-0 left-auto z-20 py-2 mt-8 text-sm whitespace-nowrap bg-white rounded shadow-xl">
+            {<InertiaLink
+              href={route('user.edit', auth.user.id)}
+              className="block px-6 py-2 hover:bg-indigo-600 hover:text-white"
+              onClick={() => setMenuOpened(false)}
+            >
+              My Profile
+            </InertiaLink>}
+            <InertiaLink
+              href={route('user.index')}
+              className="block px-6 py-2 hover:bg-indigo-600 hover:text-white"
+              onClick={() => setMenuOpened(false)}
+            >
+              Manage Users
+            </InertiaLink>
+            <InertiaLink
+              as="button"
+              href={route('logout')}
+              className="block w-full px-6 py-2 text-left focus:outline-none hover:bg-indigo-600 hover:text-white"
+              method="post"
+            >
+              Logout
+            </InertiaLink>
+          </div>
           <div
             onClick={() => {
               setMenuOpened(false);
