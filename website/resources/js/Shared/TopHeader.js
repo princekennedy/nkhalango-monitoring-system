@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { InertiaLink } from '@inertiajs/inertia-react';
 import Logo from '@/Components/Logo';
-import MainMenu from '@/Components/MainMenu';
+import MainMenu from './MainMenu';
 
 export default () => {
   const [menuOpened, setMenuOpened] = useState(false);
