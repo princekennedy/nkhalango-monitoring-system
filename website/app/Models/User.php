@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Status;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -17,7 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        // 'name',
         'email',
         'password',
         'status_id',
@@ -41,4 +42,23 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the user that owns the status.
+     */
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
+
+    public function getNameAttribute()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
+
+    public function scopeOrderByName($query)
+    {
+        $query->orderBy('last_name')->orderBy('first_name');
+    }
+
 }
