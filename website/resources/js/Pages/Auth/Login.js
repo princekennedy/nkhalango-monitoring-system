@@ -25,7 +25,7 @@ export default () => {
                 className="mt-4 overflow-hidden bg-white rounded-lg shadow-xl"
             >
                 <div className="px-10 py-12">
-                    <h1 className="text-3xl font-bold text-center text-gray-600">Nkhalango Monitoring System</h1>
+                    <h1 className="text-3xl font-bold text-center text-green-600">Nkhalango Monitoring System</h1>
                     <div className="w-24 mx-auto mt-6 border-b-2" />
                     <TextInput
                         className="mt-10 min-w-full"
@@ -62,15 +62,15 @@ export default () => {
                         <span className="text-sm">Remember Me</span>
                     </label>
                 </div>
-                <div className="flex items-center justify-between px-10 py-4 bg-gray-100 border-t border-gray-200">
-                    <Link href={route('password.request')} className="text-sm text-gray-600 hover:text-gray-900">
+                <div className="flex items-center justify-between px-10 py-4 bg-green-100 border-t border-green-200">
+                    <Link href={route('password.request')} className="text-sm text-green-600 hover:text-green-900">
                         Forgot password?
                     </Link>
 
                     <LoadingButton
                         type="submit"
                         loading={processing}
-                        className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
+                        className="bg-green-300 hover:bg-green-400 text-green-800 font-bold py-2 px-4 rounded"
                     >
                         Login
                     </LoadingButton>

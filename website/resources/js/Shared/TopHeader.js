@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { InertiaLink, usePage } from '@inertiajs/inertia-react';
-import Icon from '@/Components/Icon';
+import {
+  VscLocation
+} from 'react-icons/vsc'
+
+import {
+  VscAccount
+} from 'react-icons/vsc'
 
 export default () => {
   const { auth } = usePage().props;
@@ -8,33 +14,37 @@ export default () => {
 
   return (
     <div className="flex items-center justify-between w-full p-4 text-sm bg-white border-b md:py-0 md:px-12 d:text-md">
-      <div className="mt-1 mr-4">Chikangawa</div>
+      <div className="mt-1 mr-4 flex">
+        <VscLocation className='mt-1' />
+        <span className='text-gray-800 uppercase'>
+          chikangawa site
+        </span>
+      </div>
       <div className="relative">
         <div
           className="flex items-center cursor-pointer select-none group"
           onClick={() => setMenuOpened(true)}
         >
-          <div className="mr-1 text-gray-800 whitespace-nowrap group-hover:text-indigo-600 focus:text-indigo-600">
+          <div className="mr-1 text-gray-800 whitespace-nowrap group-hover:text-green-600 focus:text-green-600">
             <span>{auth.user.first_name}</span>
             <span className="hidden ml-1 md:inline">{auth.user.last_name}</span>
           </div>
-          <Icon
-            className="w-5 h-5 text-gray-800 fill-current group-hover:text-indigo-600 focus:text-indigo-600"
-            name="cheveron-down"
+          <VscAccount
+            className="w-5 h-5 text-gray-800 fill-current group-hover:text-green-600 focus:text-green-600"
           />
         </div>
         <div className={menuOpened ? '' : 'hidden'}>
           <div className="absolute top-0 right-0 left-auto z-20 py-2 mt-8 text-sm whitespace-nowrap bg-white rounded shadow-xl">
             {<InertiaLink
               href={route('user.edit', auth.user.id)}
-              className="block px-6 py-2 hover:bg-indigo-600 hover:text-white"
+              className="block px-6 py-2 hover:bg-green-600 hover:text-white"
               onClick={() => setMenuOpened(false)}
             >
               My Profile
             </InertiaLink>}
             <InertiaLink
               href={route('user.index')}
-              className="block px-6 py-2 hover:bg-indigo-600 hover:text-white"
+              className="block px-6 py-2 hover:bg-green-600 hover:text-white"
               onClick={() => setMenuOpened(false)}
             >
               Manage Users
@@ -42,7 +52,7 @@ export default () => {
             <InertiaLink
               as="button"
               href={route('logout')}
-              className="block w-full px-6 py-2 text-left focus:outline-none hover:bg-indigo-600 hover:text-white"
+              className="block w-full px-6 py-2 text-left focus:outline-none hover:bg-green-600 hover:text-white"
               method="post"
             >
               Logout
