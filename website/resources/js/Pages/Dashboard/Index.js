@@ -2,9 +2,14 @@ import React from 'react';
 import { InertiaLink, usePage } from '@inertiajs/inertia-react';
 import App from "@/Layouts/App"
 
-import { VscCloudDownload } from "react-icons/vsc";
+import { VscAccount, VscCloudDownload } from "react-icons/vsc";
 import WelcomeBanner from './WelcomeBanner';
 import DashboardAvatars from './DashboardAvatars';
+import TemperatureHumidity from './TemperatureHumidity';
+import Card from './Card';
+import { FiUsers } from 'react-icons/fi';
+import { CgFeed, CgTrees } from "react-icons/cg";
+import { GoLightBulb } from "react-icons/go";
 
 const Dashboard = () => {
 	return (<>
@@ -28,24 +33,39 @@ const Dashboard = () => {
 
 			</div>
 
-			{/* Cards */}
-			<div className="grid grid-cols-12 gap-6">
-
-				{/* <DashboardCard01 />
-							<DashboardCard02 />
-							<DashboardCard03 />
-							<DashboardCard04 />
-							<DashboardCard05 />
-							<DashboardCard06 />
-							<DashboardCard07 />
-							<DashboardCard08 />
-							<DashboardCard09 />
-							<DashboardCard10 />
-							<DashboardCard11 />
-							<DashboardCard12 />
-							<DashboardCard13 /> */}
-
+			<div className="grid grid-cols-3 grid-rows-2 gap-3 mt-4">
+				<div className="col-span-2 row-span-2 rounded-none">
+					<div className="flex flex-wrap">
+						{
+							[{
+								icon: <FiUsers />,
+								title: "Total Users",
+								total: 0
+							},
+							{
+								icon: <CgTrees />,
+								title: "Forest Population",
+								total: 0
+							},
+							{
+								icon: <CgFeed />,
+								title: "Blogs",
+								total: 0
+							},
+							{
+								icon: <GoLightBulb />,
+								title: "Fire Alerts",
+								total: 0
+							}
+							].map((card, index) => <Card title={card.title} icon={card.icon} total={card.total} key={index} />)
+						}
+					</div>
+				</div>
+				<div className="row-span-2 rounded-none">
+					<TemperatureHumidity />
+				</div>
 			</div>
+
 		</main>
 
 	</>);
