@@ -29,6 +29,7 @@
     },
     "dependencies": {
         "classnames": "^2.3.1",
+        "react-apexcharts": "^1.4.0",
         "react-icons": "^4.4.0",
         "react-use": "^17.4.0"
     }

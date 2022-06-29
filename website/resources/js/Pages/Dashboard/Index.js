@@ -11,10 +11,45 @@ import { FiUsers } from 'react-icons/fi';
 import { CgFeed, CgTrees } from "react-icons/cg";
 import { GoLightBulb } from "react-icons/go";
 
+import Chart from 'react-apexcharts'
+
+
 const Dashboard = () => {
+	const settings = {
+		options: {
+			title: {
+				text: "Forest Population",
+				align: 'center',
+				margin: 10,
+				offsetX: 0,
+				offsetY: 0,
+				floating: false,
+				style: {
+					fontSize: '28px',
+					fontWeight: 'bold',
+					fontFamily: undefined,
+					color: '#263238'
+				},
+			},
+			colors: ['#2c9747'],
+			chart: {
+				id: "basic-bar"
+			},
+			xaxis: {
+				categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+			},
+		},
+		series: [
+			{
+				name: "series-1",
+				data: [30, 40, 45, 50, 49, 60, 70, 91]
+			}
+		]
+	};
+
 	return (<>
 
-		<main>
+		<main className='container mx-1'>
 			<WelcomeBanner />
 
 			<div className="flex justify-between items-center">
@@ -33,8 +68,8 @@ const Dashboard = () => {
 
 			</div>
 
-			<div className="grid grid-cols-3 grid-rows-2 gap-3 mt-4">
-				<div className="col-span-2 row-span-2 rounded-none">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-3">
+				<div className="sm:row-span-1 col-span-3">
 					<div className="flex flex-wrap">
 						{
 							[{
@@ -61,8 +96,38 @@ const Dashboard = () => {
 						}
 					</div>
 				</div>
-				<div className="row-span-2 rounded-none">
-					<TemperatureHumidity />
+				<div className="sm:row-span-1 col-span-1">
+					<TemperatureHumidity className="shadow-lg border-2 border-green-400" />
+				</div>
+			</div>
+
+
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-5">
+				<div className='sm:row-span-1 col-span-2'>
+					<div className="rounded overflow-hidden shadow-lg border-2 border-green-400">
+						<Chart
+							options={settings.options}
+							series={settings.series}
+							type="bar"
+							width="100%"
+							height="350px"
+							className="pt-5"
+						/>
+					</div>
+				</div>
+
+
+				<div className='sm:row-span-1 col-span-2'>
+					<div className="rounded overflow-hidden shadow-lg border-2 border-green-400">
+						<Chart
+							options={settings.options}
+							series={settings.series}
+							type="line"
+							width="100%"
+							height="350px"
+							className="pt-5"
+						/>
+					</div>
 				</div>
 			</div>
 
