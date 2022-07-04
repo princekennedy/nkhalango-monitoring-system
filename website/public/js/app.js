@@ -3605,13 +3605,53 @@ var Dashboard = function Dashboard() {
         id: "basic-bar"
       },
       xaxis: {
-        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+        labels: {
+          datetimeFormatter: {
+            year: 'yyyy',
+            month: 'MMM \'yy',
+            day: 'dd MMM',
+            hour: 'HH:mm'
+          }
+        }
       }
     },
     series: [{
       name: "series-1",
-      data: [30, 40, 45, 50, 49, 60, 70, 91]
+      data: [30, 40, 45, 50, 30, 40, 45, 50, 30, 40, 45, 50]
     }]
+  },
+      pie = {
+    options: {
+      title: {
+        text: "Forest Damages",
+        align: 'center',
+        margin: 10,
+        offsetX: 0,
+        offsetY: 0,
+        floating: false,
+        style: {
+          fontSize: '28px',
+          fontWeight: 'bold',
+          fontFamily: undefined,
+          color: '#263238'
+        }
+      },
+      colors: ['rgb(39, 103, 73)', 'rgb(29, 65, 123)', '#85eea7', '#1ac614', '#5cdb93'],
+      labels: ['Natural Death', 'Fire Breaks', 'Deforestation', 'Theft'],
+      responsive: [{
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200
+          },
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }]
+    },
+    series: [44, 55, 13, 43]
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("main", {
@@ -3685,9 +3725,9 @@ var Dashboard = function Dashboard() {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "rounded overflow-hidden shadow-lg border-2 border-green-400",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_apexcharts__WEBPACK_IMPORTED_MODULE_7__["default"], {
-              options: settings.options,
-              series: settings.series,
-              type: "line",
+              options: pie.options,
+              series: pie.series,
+              type: "pie",
               width: "100%",
               height: "350px",
               className: "pt-5"
