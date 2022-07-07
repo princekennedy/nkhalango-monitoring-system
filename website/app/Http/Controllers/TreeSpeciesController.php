@@ -14,7 +14,7 @@ class TreeSpeciesController extends Controller
      */
     public function index()
     {
-        //
+        return inertia('TreeSpecies/Index');
     }
 
     /**

@@ -14,7 +14,7 @@ class WeatherController extends Controller
      */
     public function index()
     {
-        //
+        return inertia('Weather/Index');
     }
 
     /**
