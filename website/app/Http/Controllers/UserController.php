@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\UserCollection;
 use App\Http\Resources\UserResource;
 use App\Models\User;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Request;
 use Inertia\Inertia;
 
 class UserController extends Controller
@@ -16,7 +18,16 @@ class UserController extends Controller
      */
     public function index()
     {
-        return inertia('User/Index');
+        return inertia('User/Index', [
+            'filters' => Request::all('search', 'role', 'trashed'),
+            'users' => new UserCollection(
+                Auth::user()
+                    ->orderByName()
+                    ->filter(Request::only('search', 'role', 'trashed'))
+                    ->paginate()
+                    ->appends(Request::all())
+            ),
+        ]);
     }
 
     /**

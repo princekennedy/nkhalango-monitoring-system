@@ -2,14 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { InertiaLink, usePage } from '@inertiajs/inertia-react';
 import App from "@/Layouts/App"
 
-import { VscAccount, VscCloudDownload } from "react-icons/vsc";
+import { VscCloudDownload } from "react-icons/vsc";
 import WelcomeBanner from './WelcomeBanner';
 import DashboardAvatars from './DashboardAvatars';
 import TemperatureHumidity from './TemperatureHumidity';
-import Card from './Card';
-import { FiUsers } from 'react-icons/fi';
-import { CgFeed, CgTrees } from "react-icons/cg";
-import { GoLightBulb } from "react-icons/go";
 
 import Chart from 'react-apexcharts'
 import ChartSettings from './ChartSettings';
@@ -18,9 +14,9 @@ import Statistics from './Statistics';
 
 const Dashboard = () => {
 
-	const [barDataset, setBarDataset] = useState()
-	const [pieDataset, setPieDataset] = useState()
-	const data = usePage().props.data ?? [];
+	const [barDataset, setBarDataset] = useState([])
+	const [pieDataset, setPieDataset] = useState([])
+	const { data } = usePage().props;
 
 
 	useEffect(() => {

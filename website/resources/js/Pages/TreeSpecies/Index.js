@@ -3,9 +3,11 @@ import React from 'react'
 import App from '@/Layouts/App';
 
 const TreeSpecies = () => {
+	return <>
 
+	</>
 }
 
-TreeSpecies.layout = page => <App title="TreeSpeciess" children={page} />;
+TreeSpecies.layout = page => <App title="TreeSpecies" children={page} />;
 
 export default TreeSpecies;
