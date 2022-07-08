@@ -1,10 +1,10 @@
 # packages
 import cv2
 from utils.folders import file_path
-from datetime import date
+from datetime import datetime
 
 
-def start_monitoring():
+def start_camera():
     try:
         # open the webcam video stream
         webcam = cv2.VideoCapture(0)
@@ -13,12 +13,11 @@ def start_monitoring():
         fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
 
         # open output video file stream
-        file = file_path("video", str("nms_" + date.today().strftime("%d_%m_%y-v") + '.mp4'))
-
-        video = cv2.VideoWriter(file, fourcc, 25.0, (640, 480))
+        file_name = "nms-" + datetime.now().strftime("%H-%M-%S") + '-capture.mp4'
+        video = cv2.VideoWriter(file_path("video", file_name), fourcc, 25.0, (640, 480))
 
         # main loop
-        while True:
+        while webcam.isOpened():
             # get the frame from the webcam
             stream_ok, frame = webcam.read()
 
@@ -45,3 +44,4 @@ def start_monitoring():
         # return path
     except KeyboardInterrupt:
         print("Camera stopped")
+

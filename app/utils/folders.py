@@ -1,9 +1,10 @@
 import os
 
 
-def folder(name, file):
-    folders = {
+def file_path(name, file):
+    dir = {
         "video": 'storage/videos',
+        "image": 'storage/images',
     }
 
-    return folders.get(name) + file
+    return str(os.path.abspath(dir.get(name)) + "/" + file)

@@ -2,7 +2,7 @@
 import cv2
 import os
 from datetime import date
-from Utils.folders import folder
+from utils.folders import file_path
 
 
 def video_to_image(file_name):
@@ -20,7 +20,7 @@ def video_to_image(file_name):
         print('Error: Creating directory of data')
 
     # get video path
-    video = cv2.VideoCapture(folder("video", file_name))
+    video = cv2.VideoCapture(file_path("video", file_name))
 
     # reading from frame
     ret, frame = video.read()
