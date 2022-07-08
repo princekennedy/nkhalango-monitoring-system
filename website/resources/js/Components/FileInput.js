@@ -1,5 +1,6 @@
+import { filesize } from '@/Utils';
 import React, { useState, useRef } from 'react';
-import { filesize } from '@/utils';
+// import { filesize } from '@/utils';
 
 const Button = ({ text, onClick }) => (
   <button

@@ -40,7 +40,14 @@ const Index = () => {
 					</tr>
 				</thead>
 				<tbody>
-					{data.map(({ id, name, avatar, email, status, deleted_at }) => {
+					{data.map(user => {
+						const id = user.id,
+							name = user.name,
+							avatar = user.avatar,
+							email = user.email,
+							deleted_at = user.deleted_at,
+							status = user.status.name
+
 						return (
 							<tr
 								key={id}

@@ -4,6 +4,7 @@ import { usePage } from '@inertiajs/inertia-react';
 import { usePrevious } from 'react-use';
 import SelectInput from '@/Components/SelectInput';
 import pickBy from 'lodash/pickBy';
+import TextInput from './TextInput';
 
 export default () => {
   const { filters } = usePage().props;
@@ -102,15 +103,16 @@ export default () => {
             </svg>
           </div>
         </button>
-        <input
-          className="relative w-full px-6 py-3 rounded-r focus:outline-none focus:ring-2 focus:ring-indigo-400"
+
+        <TextInput
+
+          className="relative w-full p-0 rounded-r focus:outline-none focus:ring-2 focus:ring-indigo-400"
           autoComplete="off"
           type="text"
           name="search"
           value={values.search}
           onChange={handleChange}
-          placeholder="Search…"
-        />
+          placeholder="Search…" />
       </div>
       <button
         onClick={reset}
