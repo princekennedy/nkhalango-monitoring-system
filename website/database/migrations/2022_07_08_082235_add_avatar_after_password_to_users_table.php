@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddDeletedAtAfterStatusIdToUsersTable extends Migration
+class AddAvatarAfterPasswordToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddDeletedAtAfterStatusIdToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->softDeletes();
+            $table->string('avatar', 100)->nullable()->after("password");
         });
     }
 
@@ -26,7 +26,7 @@ class AddDeletedAtAfterStatusIdToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('deleted_at');
+            $table->dropColumn("avatar");
         });
     }
 }
