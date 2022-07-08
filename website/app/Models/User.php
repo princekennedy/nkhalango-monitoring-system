@@ -2,18 +2,23 @@
 
 namespace App\Models;
 
+use App\Models\Status;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\Access\Authorizable;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\URL;
+use League\Glide\Server;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Model implements AuthenticatableContract, AuthorizableContract
 {
-    use SoftDeletes, Authenticatable, Authorizable, HasFactory;
+    use SoftDeletes, Authenticatable, Authorizable, HasFactory, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +26,8 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      * @var array<int, string>
      */
     protected $fillable = [
-        // 'name',
+        'first_name',
+        'last_name',
         'email',
         'password',
         'status_id',
@@ -66,6 +72,31 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         }
 
         $this->attributes['password'] = Hash::make($password);
+    }
+
+    /**
+     * User avatar configurations
+     *
+     */
+    public function setAvatarAttribute($avatar)
+    {
+        if (!$avatar) {
+            return;
+        }
+
+        $this->attributes['avatar'] = $avatar instanceof UploadedFile ? $avatar->store('users') : $avatar;
+    }
+
+    public function getAvatarAttribute()
+    {
+        return $this->avatarUrl(['w' => 40, 'h' => 40, 'fit' => 'crop']);
+    }
+
+    public function avatarUrl(array $attributes)
+    {
+        if ($this->avatar ?? null) {
+            return URL::to(App::make(Server::class)->fromPath($this->avatar, $attributes));
+        }
     }
 
     public function scopeOrderByName($query)

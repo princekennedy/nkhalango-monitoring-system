@@ -25,12 +25,10 @@ class UserResource extends JsonResource
             'id' => $this->id,
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
-            'name' => $this->name,
             'email' => $this->email,
-            // 'owner' => 234,
-            // 'photo' => $this->photo,
+            'avatar' => $this->avatar,
             'deleted_at' => $this->deleted_at,
-            'status' => $this->whenLoaded('status'),
+            'status' => new StatusResource($this->status),
         ];
 
     }

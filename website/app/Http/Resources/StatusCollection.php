@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class UserCollection extends ResourceCollection
+class StatusCollection extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.
@@ -18,15 +18,8 @@ class UserCollection extends ResourceCollection
             "data" => $this->collection->map->only(
                 'id',
                 'name',
-                'email',
-                'avatar',
-                'status',
-                'deleted_at'
+                'description',
             ),
-            "meta" => [
-
-            ],
         ];
-
     }
 }
