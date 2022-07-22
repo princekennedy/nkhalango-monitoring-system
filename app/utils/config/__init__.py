@@ -1,0 +1,3 @@
+import os
+
+FIRE_DETECT_TIMEOUT = 1000
