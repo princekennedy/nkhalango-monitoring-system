@@ -1,26 +1,22 @@
 # Python code to read image
-import cv2
+from datetime import datetime
+import os
+from utils.folders import file_path
 
 
-def open_image(path, title):
+def screenshot(frame, cv2):
     try:
-        # To read image from disk, we use
-        # cv2.imread function, in below method,
-        img = cv2.imread(path, cv2.IMREAD_COLOR)
-
-        # Creating GUI window to display an image on screen
-        # first Parameter is windows title (should be in string format)
-        # Second Parameter is image array
-        cv2.imshow(title, img)
-
-        # To hold the window on screen, we use cv2.waitKey method
-        # Once it detected the close input, it will release the control
-        # To the next line
-        # First Parameter is for holding screen for specified milliseconds
-        # It should be positive integer. If 0 pass parameter, then it will
-        # hold the screen until user close it.
-        cv2.waitKey(0)
-
-        return cv2
+        image = file_path("image", 'nms-' + str(datetime.now().strftime("%d-%m-%y-%H-%M-%S")) + '.jpg')
+        cv2.imwrite(image, frame)
+        return image
     except:
-        pass
+        print("Failed to take screenshot")
+        exit(1)
+
+
+def delete_file(path):
+    # TODO delete the video after analysis
+    if os.path.exists(path):
+        os.remove(path)
+    else:
+        print("File does not exists.")
