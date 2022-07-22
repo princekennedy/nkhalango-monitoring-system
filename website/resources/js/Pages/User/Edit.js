@@ -20,6 +20,7 @@ const Edit = () => {
 		last_name: user.last_name ?? '',
 		email: user.email ?? '',
 		avatar: user.avatar ?? '',
+		status_id: user.status.id ?? '',
 		password: '',
 	})
 
@@ -108,14 +109,14 @@ const Edit = () => {
 					/>
 					<SelectInput
 						className="w-full pb-8 pr-6 lg:w-1/2"
-						label="Owner"
-						name="owner"
-						errors={errors.owner}
-						value={data.owner}
-						onChange={e => setData('owner', e.target.value)}
+						label="Account Status"
+						name="status_id"
+						errors={errors.status}
+						value={data.status}
+						onChange={e => setData('status', e.target.value)}
 					>
-						<option value="1">Yes</option>
-						<option value="0">No</option>
+						<option value="1">Active</option>
+						<option value="0">Inactive</option>
 					</SelectInput>
 					<FileInput
 						className="w-full pb-8 pr-6 lg:w-1/2"

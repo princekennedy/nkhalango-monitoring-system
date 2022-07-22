@@ -12,8 +12,7 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\URL;
-use League\Glide\Server;
+use Illuminate\Support\Str;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Model implements AuthenticatableContract, AuthorizableContract
@@ -30,6 +29,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         'last_name',
         'email',
         'password',
+        'avatar',
         'status_id',
     ];
 
@@ -62,7 +62,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
     public function getNameAttribute()
     {
-        return $this->first_name . ' ' . $this->last_name;
+        return Str::ucfirst($this->first_name . ' ' . $this->last_name);
     }
 
     public function setPasswordAttribute($password)
@@ -87,15 +87,10 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         $this->attributes['avatar'] = $avatar instanceof UploadedFile ? $avatar->store('users') : $avatar;
     }
 
-    public function getAvatarAttribute()
+    public function getAvatarAttribute($avatar)
     {
-        return $this->avatarUrl(['w' => 40, 'h' => 40, 'fit' => 'crop']);
-    }
-
-    public function avatarUrl(array $attributes)
-    {
-        if ($this->avatar ?? null) {
-            return URL::to(App::make(Server::class)->fromPath($this->avatar, $attributes));
+        if ($avatar) {
+            // return URL::to(App::make(Server::class)->fromPath($avatar, ['w' => 40, 'h' => 40, 'fit' => 'crop']));
         }
     }
 

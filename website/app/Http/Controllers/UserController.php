@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserDeleteRequest;
 use App\Http\Requests\UserStoreRequest;
+use App\Http\Requests\UserUpdateRequest;
 use App\Http\Resources\UserCollection;
 use App\Http\Resources\UserResource;
 use App\Models\User;
@@ -89,21 +91,42 @@ class UserController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\User  $user
-     * @return \Inertia\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, User $user)
+    public function update(User $user, UserUpdateRequest $request)
     {
-        //
+        $user->update(
+            $request->validated()
+        );
+
+        return Redirect::back()->with('success', 'User updated.');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\User  $user
-     * @return \Inertia\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(User $user)
+    public function destroy(User $user, UserDeleteRequest $request)
     {
-        //
+        $user->delete();
+
+        return Redirect::back()->with('success', 'User deleted.');
+
     }
+
+    /**
+     * Restore the specified resource from trash.
+     *
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function restore(User $user)
+    {
+        $user->restore();
+
+        return Redirect::back()->with('success', 'User restored.');
+    }
+
 }

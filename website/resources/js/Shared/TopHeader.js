@@ -12,6 +12,8 @@ export default () => {
   const { auth } = usePage().props;
   const [menuOpened, setMenuOpened] = useState(false);
 
+  console.log(auth.user);
+
   return (
     <div className="flex items-center justify-between w-full p-4 text-sm bg-white border-b md:py-0 md:px-12 d:text-md">
       <div className="mt-1 mr-4 flex">
@@ -29,9 +31,10 @@ export default () => {
             <span>{auth.user.first_name}</span>
             <span className="hidden ml-1 md:inline">{auth.user.last_name}</span>
           </div>
-          <VscAccount
+          {/* <VscAccount
             className="w-5 h-5 text-gray-800 fill-current group-hover:text-green-600 focus:text-green-600"
-          />
+          /> */}
+          <img src={auth.user.avatar} className="w-5 h-5 text-gray-800 fill-current group-hover:text-green-600 focus:text-green-600" />
         </div>
         <div className={menuOpened ? '' : 'hidden'}>
           <div className="absolute top-0 right-0 left-auto z-20 py-2 mt-8 text-sm whitespace-nowrap bg-white rounded shadow-xl">

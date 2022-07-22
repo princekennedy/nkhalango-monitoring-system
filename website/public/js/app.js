@@ -6066,7 +6066,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Edit = function Edit() {
-  var _user$first_name, _user$last_name, _user$email, _user$avatar;
+  var _user$first_name, _user$last_name, _user$email, _user$avatar, _user$status$id;
 
   var user = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_8__.usePage)().props.user;
 
@@ -6076,6 +6076,7 @@ var Edit = function Edit() {
     last_name: (_user$last_name = user.last_name) !== null && _user$last_name !== void 0 ? _user$last_name : '',
     email: (_user$email = user.email) !== null && _user$email !== void 0 ? _user$email : '',
     avatar: (_user$avatar = user.avatar) !== null && _user$avatar !== void 0 ? _user$avatar : '',
+    status_id: (_user$status$id = user.status.id) !== null && _user$status$id !== void 0 ? _user$status$id : '',
     password: ''
   }),
       data = _useForm.data,
@@ -6173,19 +6174,19 @@ var Edit = function Edit() {
             }
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_Components_SelectInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
             className: "w-full pb-8 pr-6 lg:w-1/2",
-            label: "Owner",
-            name: "owner",
-            errors: errors.owner,
-            value: data.owner,
+            label: "Account Status",
+            name: "status_id",
+            errors: errors.status,
+            value: data.status,
             onChange: function onChange(e) {
-              return setData('owner', e.target.value);
+              return setData('status', e.target.value);
             },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("option", {
               value: "1",
-              children: "Yes"
+              children: "Active"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("option", {
               value: "0",
-              children: "No"
+              children: "Inactive"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Components_FileInput__WEBPACK_IMPORTED_MODULE_1__["default"], {
             className: "w-full pb-8 pr-6 lg:w-1/2",
@@ -6651,6 +6652,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       menuOpened = _useState2[0],
       setMenuOpened = _useState2[1];
 
+  console.log(auth.user);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "flex items-center justify-between w-full p-4 text-sm bg-white border-b md:py-0 md:px-12 d:text-md",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -6676,7 +6678,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
             className: "hidden ml-1 md:inline",
             children: auth.user.last_name
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_icons_vsc__WEBPACK_IMPORTED_MODULE_3__.VscAccount, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          src: auth.user.avatar,
           className: "w-5 h-5 text-gray-800 fill-current group-hover:text-green-600 focus:text-green-600"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
