@@ -8,6 +8,6 @@ class ImagesController extends Controller
 {
     public function show(Server $glide)
     {
-        return $glide->fromRequest()->response();
+        // return $glide->fromRequest()->response();
     }
 }

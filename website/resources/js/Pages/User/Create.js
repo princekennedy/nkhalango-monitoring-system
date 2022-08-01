@@ -6,6 +6,7 @@ import SelectInput from '@/Components/SelectInput';
 import FileInput from '@/Components/FileInput';
 import LoadingButton from '@/Components/LoadingButton';
 import App from '@/Layouts/App';
+import { VscAccount } from 'react-icons/vsc';
 
 const Create = () => {
 	const { data, setData, errors, post, processing } = useForm({
@@ -24,8 +25,8 @@ const Create = () => {
 
 	return (
 		<div>
-			<div>
-				<h1 className="mb-8 text-3xl font-bold">
+			<div className="flex items-center justify-between mb-6">
+				<h1 className="text-3xl font-bold">
 					<InertiaLink
 						href={route('user.index')}
 						className="text-indigo-600 hover:text-indigo-700"
@@ -34,7 +35,17 @@ const Create = () => {
 					</InertiaLink>
 					<span className="font-medium text-indigo-600"> /</span> Create
 				</h1>
+
+				<InertiaLink
+					className="text-green-700 focus:outline-none flex"
+					href={route('user.index')}
+				>
+					<VscAccount className="mr-2 mt-1 hidden md:inline" />
+					<span>All Users</span>
+				</InertiaLink>
+
 			</div>
+
 			<div className="max-w-3xl overflow-hidden bg-white rounded shadow">
 				<form name="createForm" onSubmit={handleSubmit} autoComplete="off">
 					<div className="flex flex-wrap p-8 -mb-8 -mr-6">

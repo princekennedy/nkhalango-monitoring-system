@@ -21,7 +21,7 @@ const Index = () => {
 		<div className="flex items-center justify-between mb-6">
 			<SearchFilter />
 			<InertiaLink
-				className="btn-indigo focus:outline-none"
+				className="text-green-700 focus:outline-none"
 				href={route('user.create')}
 			>
 				<span>Create</span>
