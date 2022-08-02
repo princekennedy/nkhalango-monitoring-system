@@ -50,7 +50,7 @@ const Create = () => {
 				<form name="createForm" onSubmit={handleSubmit} autoComplete="off">
 					<div className="flex flex-wrap p-8 -mb-8 -mr-6">
 						<TextInput
-							className="w-full pb-8 pr-6 lg:w-1/2"
+							className="w-full pb-8 pr-6"
 							label="First Name"
 							name="first_name"
 							type="text"
@@ -59,7 +59,7 @@ const Create = () => {
 							onChange={e => setData('first_name', e.target.value)}
 						/>
 						<TextInput
-							className="w-full pb-8 pr-6 lg:w-1/2"
+							className="w-full pb-8 pr-6"
 							label="Last Name"
 							name="last_name"
 							type="text"
@@ -68,7 +68,7 @@ const Create = () => {
 							onChange={e => setData('last_name', e.target.value)}
 						/>
 						<TextInput
-							className="w-full pb-8 pr-6 lg:w-1/2"
+							className="w-full pb-8 pr-6"
 							label="Email"
 							name="email"
 							type="email"
@@ -77,7 +77,7 @@ const Create = () => {
 							onChange={e => setData('email', e.target.value)}
 						/>
 						<TextInput
-							className="w-full pb-8 pr-6 lg:w-1/2"
+							className="w-full pb-8 pr-6"
 							label="Password"
 							name="password"
 							type="password"
@@ -86,7 +86,7 @@ const Create = () => {
 							onChange={e => setData('password', e.target.value)}
 						/>
 						<SelectInput
-							className="w-full pb-8 pr-6 lg:w-1/2"
+							className="w-full pb-8 pr-6"
 							label="Account Status"
 							name="status"
 							errors={errors.status}
@@ -97,7 +97,7 @@ const Create = () => {
 							<option value="0">Inactive</option>
 						</SelectInput>
 						<FileInput
-							className="w-full pb-8 pr-6 lg:w-1/2"
+							className="w-full pb-8 pr-6"
 							label="Avata"
 							name="avatar"
 							accept="image/*"

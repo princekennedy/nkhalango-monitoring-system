@@ -3139,6 +3139,62 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 /***/ }),
 
+/***/ "./resources/js/Components/TextArea.js":
+/*!*********************************************!*\
+  !*** ./resources/js/Components/TextArea.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _excluded = ["label", "name", "className", "errors"];
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (_ref) {
+  var label = _ref.label,
+      name = _ref.name,
+      className = _ref.className,
+      _ref$errors = _ref.errors,
+      errors = _ref$errors === void 0 ? [] : _ref$errors,
+      props = _objectWithoutProperties(_ref, _excluded);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: className,
+    children: [label && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+      className: "form-label",
+      htmlFor: name,
+      children: label
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("textarea", _objectSpread(_objectSpread({
+      id: name,
+      name: name
+    }, props), {}, {
+      className: "form-input border-gray-300 min-w-full ".concat(errors.length ? 'error' : '')
+    })), errors && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "form-error text-red-600",
+      children: errors
+    })]
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/js/Components/TextInput.js":
 /*!**********************************************!*\
   !*** ./resources/js/Components/TextInput.js ***!
@@ -5521,9 +5577,180 @@ RolePermission.layout = function (page) {
 /*!*******************************************!*\
   !*** ./resources/js/Pages/Soil/Create.js ***!
   \*******************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _Components_TextInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/TextInput */ "./resources/js/Components/TextInput.js");
+/* harmony import */ var _Components_SelectInput__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/SelectInput */ "./resources/js/Components/SelectInput.js");
+/* harmony import */ var _Components_FileInput__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/FileInput */ "./resources/js/Components/FileInput.js");
+/* harmony import */ var _Components_LoadingButton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Components/LoadingButton */ "./resources/js/Components/LoadingButton.js");
+/* harmony import */ var _Layouts_App__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Layouts/App */ "./resources/js/Layouts/App.js");
+/* harmony import */ var react_icons_vsc__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-icons/vsc */ "./node_modules/react-icons/vsc/index.esm.js");
+/* harmony import */ var _Components_TextArea__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Components/TextArea */ "./resources/js/Components/TextArea.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
+
+
+
+
+
+
+
+
+
+
+
+var Create = function Create() {
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.useForm)({
+    name: '',
+    description: ''
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      errors = _useForm.errors,
+      post = _useForm.post,
+      processing = _useForm.processing;
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    post(route('soil.store'));
+  }
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+      className: "flex items-center justify-between mb-6",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("h1", {
+        className: "text-3xl font-bold",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+          href: route('soil.index'),
+          className: "text-indigo-600 hover:text-indigo-700",
+          children: "Soils"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+          className: "font-medium text-indigo-600",
+          children: " /"
+        }), " Add"]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+        className: "text-green-700 focus:outline-none flex",
+        href: route('soil.index'),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_icons_vsc__WEBPACK_IMPORTED_MODULE_10__.VscTypeHierarchySub, {
+          className: "mr-2 mt-1"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+          className: "hidden md:inline",
+          children: "All Soils"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+      className: "max-w-3xl overflow-hidden bg-white rounded shadow",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("form", {
+        name: "createForm",
+        onSubmit: handleSubmit,
+        autoComplete: "off",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "p-8 -mb-8 -mr-6",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            className: "w-full pb-8 pr-6",
+            label: "Name of Soil (Type)",
+            name: "name",
+            type: "text",
+            errors: errors.name,
+            value: data.name,
+            onChange: function onChange(e) {
+              return setData('name', e.target.value);
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "flex flex-wrap",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              className: "w-full pb-8 pr-6 lg:w-1/2",
+              label: "Soil Texture",
+              name: "properties[texture]",
+              type: "text",
+              errors: errors.texture,
+              value: data.texture,
+              onChange: function onChange(e) {
+                return setData('properties[texture]', e.target.value);
+              }
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              className: "w-full pb-8 pr-6 lg:w-1/2",
+              label: "Soil Structure",
+              name: "properties[structure]",
+              type: "text",
+              errors: errors.structure,
+              value: data.structure,
+              onChange: function onChange(e) {
+                return setData('structure', e.target.value);
+              }
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              className: "w-full pb-8 pr-6 lg:w-1/2",
+              label: "Soil Porosity",
+              name: "properties[porosity]",
+              type: "text",
+              errors: errors.porosity,
+              value: data.porosity,
+              onChange: function onChange(e) {
+                return setData('porosity', e.target.value);
+              }
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              className: "w-full pb-8 pr-6 lg:w-1/2",
+              label: "Soil Chemistry",
+              name: "properties[chemistry]",
+              type: "text",
+              errors: errors.chemistry,
+              value: data.chemistry,
+              onChange: function onChange(e) {
+                return setData('chemistry', e.target.value);
+              }
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              className: "w-full pb-8 pr-6 lg:w-1/2",
+              label: "Soil Colour",
+              name: "properties[colour]",
+              type: "text",
+              errors: errors.colour,
+              value: data.colour,
+              onChange: function onChange(e) {
+                return setData('colour', e.target.value);
+              }
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_TextArea__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            className: "w-full pb-8 pr-6",
+            label: "Briefy Description",
+            name: "description",
+            rows: "5",
+            errors: errors.description,
+            value: data.description,
+            onChange: function onChange(e) {
+              return setData('description', e.target.value);
+            }
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          className: "flex items-center justify-end px-8 py-4 bg-gray-100 border-t border-gray-200",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_LoadingButton__WEBPACK_IMPORTED_MODULE_6__["default"], {
+            loading: processing,
+            type: "submit",
+            className: "btn-indigo",
+            children: "Add Soil"
+          })
+        })]
+      })
+    })]
+  });
+};
+
+Create.layout = function (page) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Layouts_App__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    title: "Add Soil",
+    children: page
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Create);
 
 /***/ }),
 
@@ -6058,7 +6285,7 @@ var Create = function Create() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
           className: "flex flex-wrap p-8 -mb-8 -mr-6",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            className: "w-full pb-8 pr-6 lg:w-1/2",
+            className: "w-full pb-8 pr-6",
             label: "First Name",
             name: "first_name",
             type: "text",
@@ -6068,7 +6295,7 @@ var Create = function Create() {
               return setData('first_name', e.target.value);
             }
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            className: "w-full pb-8 pr-6 lg:w-1/2",
+            className: "w-full pb-8 pr-6",
             label: "Last Name",
             name: "last_name",
             type: "text",
@@ -6078,7 +6305,7 @@ var Create = function Create() {
               return setData('last_name', e.target.value);
             }
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            className: "w-full pb-8 pr-6 lg:w-1/2",
+            className: "w-full pb-8 pr-6",
             label: "Email",
             name: "email",
             type: "email",
@@ -6088,7 +6315,7 @@ var Create = function Create() {
               return setData('email', e.target.value);
             }
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            className: "w-full pb-8 pr-6 lg:w-1/2",
+            className: "w-full pb-8 pr-6",
             label: "Password",
             name: "password",
             type: "password",
@@ -6098,7 +6325,7 @@ var Create = function Create() {
               return setData('password', e.target.value);
             }
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_Components_SelectInput__WEBPACK_IMPORTED_MODULE_4__["default"], {
-            className: "w-full pb-8 pr-6 lg:w-1/2",
+            className: "w-full pb-8 pr-6",
             label: "Account Status",
             name: "status",
             errors: errors.status,
@@ -6114,7 +6341,7 @@ var Create = function Create() {
               children: "Inactive"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_FileInput__WEBPACK_IMPORTED_MODULE_5__["default"], {
-            className: "w-full pb-8 pr-6 lg:w-1/2",
+            className: "w-full pb-8 pr-6",
             label: "Avata",
             name: "avatar",
             accept: "image/*",
