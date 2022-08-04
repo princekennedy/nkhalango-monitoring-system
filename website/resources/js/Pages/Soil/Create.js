@@ -11,8 +11,13 @@ import TextArea from '@/Components/TextArea';
 
 const Create = () => {
 	const { data, setData, errors, post, processing } = useForm({
-		name: '',
-		description: ''
+		name: String,
+		description: String,
+		texture: String,
+		porosity: String,
+		chemistry: String,
+		colour: String,
+		structure: String,
 	});
 
 	function handleSubmit(e) {
@@ -60,16 +65,16 @@ const Create = () => {
 							<TextInput
 								className="w-full pb-8 pr-6 lg:w-1/2"
 								label="Soil Texture"
-								name="properties[texture]"
+								name="texture"
 								type="text"
 								errors={errors.texture}
 								value={data.texture}
-								onChange={e => setData('properties[texture]', e.target.value)}
+								onChange={e => setData('texture', e.target.value)}
 							/>
 							<TextInput
 								className="w-full pb-8 pr-6 lg:w-1/2"
 								label="Soil Structure"
-								name="properties[structure]"
+								name="structure"
 								type="text"
 								errors={errors.structure}
 								value={data.structure}
@@ -78,7 +83,7 @@ const Create = () => {
 							<TextInput
 								className="w-full pb-8 pr-6 lg:w-1/2"
 								label="Soil Porosity"
-								name="properties[porosity]"
+								name="porosity"
 								type="text"
 								errors={errors.porosity}
 								value={data.porosity}
@@ -87,7 +92,7 @@ const Create = () => {
 							<TextInput
 								className="w-full pb-8 pr-6 lg:w-1/2"
 								label="Soil Chemistry"
-								name="properties[chemistry]"
+								name="chemistry"
 								type="text"
 								errors={errors.chemistry}
 								value={data.chemistry}
@@ -96,7 +101,7 @@ const Create = () => {
 							<TextInput
 								className="w-full pb-8 pr-6 lg:w-1/2"
 								label="Soil Colour"
-								name="properties[colour]"
+								name="colour"
 								type="text"
 								errors={errors.colour}
 								value={data.colour}

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Soil;
 use App\Models\Status;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
@@ -58,6 +59,14 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     public function status()
     {
         return $this->belongsTo(Status::class);
+    }
+
+    /**
+     * Get the user that owns the status.
+     */
+    public function soil()
+    {
+        return $this->hasMany(Soil::class);
     }
 
     public function getNameAttribute()

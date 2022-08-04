@@ -5610,8 +5610,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var Create = function Create() {
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.useForm)({
-    name: '',
-    description: ''
+    name: String,
+    description: String,
+    texture: String,
+    porosity: String,
+    chemistry: String,
+    colour: String,
+    structure: String
   }),
       data = _useForm.data,
       setData = _useForm.setData,
@@ -5670,17 +5675,17 @@ var Create = function Create() {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
               className: "w-full pb-8 pr-6 lg:w-1/2",
               label: "Soil Texture",
-              name: "properties[texture]",
+              name: "texture",
               type: "text",
               errors: errors.texture,
               value: data.texture,
               onChange: function onChange(e) {
-                return setData('properties[texture]', e.target.value);
+                return setData('texture', e.target.value);
               }
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
               className: "w-full pb-8 pr-6 lg:w-1/2",
               label: "Soil Structure",
-              name: "properties[structure]",
+              name: "structure",
               type: "text",
               errors: errors.structure,
               value: data.structure,
@@ -5690,7 +5695,7 @@ var Create = function Create() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
               className: "w-full pb-8 pr-6 lg:w-1/2",
               label: "Soil Porosity",
-              name: "properties[porosity]",
+              name: "porosity",
               type: "text",
               errors: errors.porosity,
               value: data.porosity,
@@ -5700,7 +5705,7 @@ var Create = function Create() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
               className: "w-full pb-8 pr-6 lg:w-1/2",
               label: "Soil Chemistry",
-              name: "properties[chemistry]",
+              name: "chemistry",
               type: "text",
               errors: errors.chemistry,
               value: data.chemistry,
@@ -5710,7 +5715,7 @@ var Create = function Create() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
               className: "w-full pb-8 pr-6 lg:w-1/2",
               label: "Soil Colour",
-              name: "properties[colour]",
+              name: "colour",
               type: "text",
               errors: errors.colour,
               value: data.colour,

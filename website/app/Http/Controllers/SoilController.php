@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SoilRequest;
 use App\Http\Resources\SoilCollection;
 use App\Http\Resources\SoilResource;
 use App\Models\Soil;
@@ -44,10 +45,10 @@ class SoilController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(SoilRequest $request)
     {
-        auth()->user()->create(
-            $request->validated()
+        auth()->user()->soil()->create(
+            $request->all()
         );
 
         return Redirect::route('soil.index')->with('success', 'Soil added.');

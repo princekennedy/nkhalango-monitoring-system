@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,9 +17,20 @@ class Soil extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'description',
+        "user_id",
+        "chemistry",
+        "colour",
+        "description",
+        "name",
+        "porosity",
+        "structure",
+        "texture",
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function scopeOrderByName($query)
     {
