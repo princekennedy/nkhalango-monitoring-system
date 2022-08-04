@@ -1,10 +1,10 @@
 import React from 'react'
 
 import App from '@/Layouts/App';
-import SearchFilter from '@/Components/SearchFilter';
 import { InertiaLink, usePage } from '@inertiajs/inertia-react';
 import Pagination from '@/Components/Pagination';
-import { VscAdd } from 'react-icons/vsc';
+import { VscAdd, VscArrowRight } from 'react-icons/vsc';
+import { FiMenu } from 'react-icons/fi';
 
 const Soil = () => {
 	const { soils } = usePage().props;
@@ -32,65 +32,61 @@ const Soil = () => {
 				<thead>
 					<tr className="font-bold text-left">
 						<th className="px-6 pt-5 pb-4">Name</th>
-						<th className="px-6 pt-5 pb-4">Description</th>
-						<th className="px-6 pt-5 pb-4" colSpan="2">
-							Properties
+						<th className="px-6 pt-5 pb-4">Texture</th>
+						<th className="px-6 pt-5 pb-4">Colour</th>
+						<th className="px-6 pt-5 pb-4">
+							<FiMenu />
 						</th>
 					</tr>
 				</thead>
 				<tbody>
-					{data.map(user => {
-						const id = user.id,
-							name = user.name,
-							avatar = user.avatar,
-							email = user.email,
-							deleted_at = user.deleted_at,
-							status = user.status.name
+					{data.map(soil => {
+						const id = soil.id,
+							name = soil.name,
+							colour = soil.colour,
+							texture = soil.texture,
+							porosity = soil.porosity,
+							chemistry = soil.chemistry,
+							structure = soil.structure,
+							description = soil.description
 
 						return (
 							<tr
 								key={id}
 								className="hover:bg-gray-100 focus-within:bg-gray-100"
 							>
+
 								<td className="border-t">
 									<InertiaLink
-										href={route('user.edit', id)}
-										className="flex items-center px-6 py-4 focus:text-indigo-700 focus:outline-none"
+										tabIndex="-1"
+										href={route('soil.edit', id)}
+										className="flex items-center px-6 py-4 focus:text-indigo focus:outline-none"
 									>
-										{avatar && (
-											<img
-												src={avatar}
-												className="block w-5 h-5 mr-2 -my-2 rounded-full"
-											/>
-										)}
 										{name}
-										{deleted_at && (
-											<VscTrash className="flex-shrink-0 w-3 h-3 ml-2 text-gray-400 fill-current" />
-										)}
 									</InertiaLink>
 								</td>
 								<td className="border-t">
 									<InertiaLink
 										tabIndex="-1"
-										href={route('user.edit', id)}
+										href={route('soil.edit', id)}
 										className="flex items-center px-6 py-4 focus:text-indigo focus:outline-none"
 									>
-										{email}
+										{texture}
 									</InertiaLink>
 								</td>
 								<td className="border-t">
 									<InertiaLink
 										tabIndex="-1"
-										href={route('user.edit', id)}
+										href={route('soil.edit', id)}
 										className="flex items-center px-6 py-4 focus:text-indigo focus:outline-none"
 									>
-										{status}
+										{colour}
 									</InertiaLink>
 								</td>
 								<td className="w-px border-t">
 									<InertiaLink
 										tabIndex="-1"
-										href={route('user.edit', id)}
+										href={route('soil.edit', id)}
 										className="flex items-center px-4 focus:outline-none"
 									>
 										<VscArrowRight className="block w-6 h-6 text-gray-700 fill-current"
