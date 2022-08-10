@@ -1,8 +1,11 @@
 import React from 'react'
 
 import App from '@/Layouts/App';
+import { usePage } from '@inertiajs/inertia-react';
 
 const TreeSpecies = () => {
+	const { species } = usePage.props
+
 	return <>
 
 	</>
