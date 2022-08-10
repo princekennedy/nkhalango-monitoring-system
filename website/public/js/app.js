@@ -5610,13 +5610,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var Create = function Create() {
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.useForm)({
-    name: String,
-    description: String,
-    texture: String,
-    porosity: String,
-    chemistry: String,
-    colour: String,
-    structure: String
+    name: '',
+    description: '',
+    texture: '',
+    porosity: '',
+    chemistry: '',
+    colour: '',
+    structure: ''
   }),
       data = _useForm.data,
       setData = _useForm.setData,
@@ -5770,20 +5770,171 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Layouts_App__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/App */ "./resources/js/Layouts/App.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Components_LoadingButton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/LoadingButton */ "./resources/js/Components/LoadingButton.js");
+/* harmony import */ var _Components_TextArea__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/TextArea */ "./resources/js/Components/TextArea.js");
+/* harmony import */ var _Components_TextInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/TextInput */ "./resources/js/Components/TextInput.js");
+/* harmony import */ var _Layouts_App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Layouts/App */ "./resources/js/Layouts/App.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_icons_vsc__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-icons/vsc */ "./node_modules/react-icons/vsc/index.esm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
 
 
 
 
 
 var Edit = function Edit() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {});
+  var _soil$name, _soil$description, _soil$texture, _soil$porosity, _soil$chemistry, _soil$colour, _soil$structure;
+
+  var soil = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.usePage)().props.soil;
+
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.useForm)({
+    _method: "PUT",
+    name: (_soil$name = soil.name) !== null && _soil$name !== void 0 ? _soil$name : '',
+    description: (_soil$description = soil.description) !== null && _soil$description !== void 0 ? _soil$description : '',
+    texture: (_soil$texture = soil.texture) !== null && _soil$texture !== void 0 ? _soil$texture : '',
+    porosity: (_soil$porosity = soil.porosity) !== null && _soil$porosity !== void 0 ? _soil$porosity : '',
+    chemistry: (_soil$chemistry = soil.chemistry) !== null && _soil$chemistry !== void 0 ? _soil$chemistry : '',
+    colour: (_soil$colour = soil.colour) !== null && _soil$colour !== void 0 ? _soil$colour : '',
+    structure: (_soil$structure = soil.structure) !== null && _soil$structure !== void 0 ? _soil$structure : ''
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      errors = _useForm.errors,
+      post = _useForm.post,
+      processing = _useForm.processing;
+
+  var handleSubmit = function handleSubmit(e) {
+    e.preventDefault();
+    post(route('soil.update', soil.id));
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      className: "flex items-center justify-between mb-6",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("h1", {
+        className: "text-3xl font-bold",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
+          href: route('soil.index'),
+          className: "text-indigo-600 hover:text-indigo-700",
+          children: "Soils"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+          className: "font-medium text-indigo-600",
+          children: " /"
+        }), " Edit"]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
+        className: "text-green-700 focus:outline-none flex",
+        href: route('soil.index'),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_icons_vsc__WEBPACK_IMPORTED_MODULE_7__.VscTypeHierarchySub, {
+          className: "mr-2 mt-1"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+          className: "hidden md:inline",
+          children: "All Soils"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      className: "max-w-3xl overflow-hidden bg-white rounded shadow",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
+        onSubmit: handleSubmit,
+        autoComplete: "off",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          className: "p-8 -mb-8 -mr-6",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            className: "w-full pb-8 pr-6",
+            label: "Name of Soil (Type)",
+            name: "name",
+            type: "text",
+            errors: errors.name,
+            value: data.name,
+            onChange: function onChange(e) {
+              return setData('name', e.target.value);
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            className: "flex flex-wrap",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              className: "w-full pb-8 pr-6 lg:w-1/2",
+              label: "Soil Texture",
+              name: "texture",
+              type: "text",
+              errors: errors.texture,
+              value: data.texture,
+              onChange: function onChange(e) {
+                return setData('texture', e.target.value);
+              }
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              className: "w-full pb-8 pr-6 lg:w-1/2",
+              label: "Soil Structure",
+              name: "structure",
+              type: "text",
+              errors: errors.structure,
+              value: data.structure,
+              onChange: function onChange(e) {
+                return setData('structure', e.target.value);
+              }
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              className: "w-full pb-8 pr-6 lg:w-1/2",
+              label: "Soil Porosity",
+              name: "porosity",
+              type: "text",
+              errors: errors.porosity,
+              value: data.porosity,
+              onChange: function onChange(e) {
+                return setData('porosity', e.target.value);
+              }
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              className: "w-full pb-8 pr-6 lg:w-1/2",
+              label: "Soil Chemistry",
+              name: "chemistry",
+              type: "text",
+              errors: errors.chemistry,
+              value: data.chemistry,
+              onChange: function onChange(e) {
+                return setData('chemistry', e.target.value);
+              }
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              className: "w-full pb-8 pr-6 lg:w-1/2",
+              label: "Soil Colour",
+              name: "colour",
+              type: "text",
+              errors: errors.colour,
+              value: data.colour,
+              onChange: function onChange(e) {
+                return setData('colour', e.target.value);
+              }
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_TextArea__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            className: "w-full pb-8 pr-6",
+            label: "Briefy Description",
+            name: "description",
+            rows: "5",
+            errors: errors.description,
+            value: data.description,
+            onChange: function onChange(e) {
+              return setData('description', e.target.value);
+            }
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          className: "flex items-center justify-end px-8 py-4 bg-gray-100 border-t border-gray-200",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_LoadingButton__WEBPACK_IMPORTED_MODULE_0__["default"], {
+            loading: processing,
+            type: "submit",
+            className: "btn-indigo",
+            children: "Update"
+          })
+        })]
+      })
+    })]
+  });
 };
 
 Edit.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Layouts_App__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Layouts_App__WEBPACK_IMPORTED_MODULE_3__["default"], {
     children: page
   });
 };
@@ -5866,11 +6017,7 @@ var Soil = function Soil() {
             var id = soil.id,
                 name = soil.name,
                 colour = soil.colour,
-                texture = soil.texture,
-                porosity = soil.porosity,
-                chemistry = soil.chemistry,
-                structure = soil.structure,
-                description = soil.description;
+                texture = soil.texture;
             return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
               className: "hover:bg-gray-100 focus-within:bg-gray-100",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
@@ -6995,7 +7142,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {
   var auth = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.auth;
 
@@ -7004,7 +7150,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       menuOpened = _useState2[0],
       setMenuOpened = _useState2[1];
 
-  console.log(auth.user);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "flex items-center justify-between w-full p-4 text-sm bg-white border-b md:py-0 md:px-12 d:text-md",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {

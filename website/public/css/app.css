@@ -695,13 +695,13 @@ select {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
 }
-.-my-2 {
-  margin-top: -0.5rem;
-  margin-bottom: -0.5rem;
-}
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+}
+.-my-2 {
+  margin-top: -0.5rem;
+  margin-bottom: -0.5rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
@@ -886,11 +886,11 @@ select {
 .w-10 {
   width: 2.5rem;
 }
-.w-3 {
-  width: 0.75rem;
-}
 .w-px {
   width: 1px;
+}
+.w-3 {
+  width: 0.75rem;
 }
 .min-w-full {
   min-width: 100%;
