@@ -21,10 +21,6 @@ class SoilCollection extends ResourceCollection
                 'description',
                 'colour',
                 'texture',
-                'porosity',
-                'chemistry',
-                'structure',
-                'description'
             ),
             "meta" => [
 

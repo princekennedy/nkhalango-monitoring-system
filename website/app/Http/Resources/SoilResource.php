@@ -17,7 +17,12 @@ class SoilResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'description' => $this->last_name,
+            'colour' => $this->colour,
+            'texture' => $this->texture,
+            'porosity' => $this->porosity,
+            'structure' => $this->structure,
+            'chemistry' => $this->chemistry,
+            'description' => $this->description,
         ];
     }
 }

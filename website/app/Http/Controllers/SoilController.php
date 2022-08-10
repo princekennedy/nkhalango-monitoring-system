@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\SoilRequest;
+use App\Http\Requests\SoilStoreRequest;
+use App\Http\Requests\SoilUpdateRequest;
 use App\Http\Resources\SoilCollection;
 use App\Http\Resources\SoilResource;
 use App\Models\Soil;
@@ -45,7 +46,7 @@ class SoilController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(SoilRequest $request)
+    public function store(SoilStoreRequest $request)
     {
         auth()->user()->soil()->create(
             $request->all()
@@ -87,9 +88,9 @@ class SoilController extends Controller
      * @param  \App\Models\Soil  $soil
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Soil $soil)
+    public function update(SoilUpdateRequest $request, Soil $soil)
     {
-        $request->update(
+        $soil->update(
             $request->validated()
         );
 
