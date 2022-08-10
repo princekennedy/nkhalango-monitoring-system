@@ -44,11 +44,7 @@ const Soil = () => {
 						const id = soil.id,
 							name = soil.name,
 							colour = soil.colour,
-							texture = soil.texture,
-							porosity = soil.porosity,
-							chemistry = soil.chemistry,
-							structure = soil.structure,
-							description = soil.description
+							texture = soil.texture
 
 						return (
 							<tr

@@ -11,13 +11,13 @@ import TextArea from '@/Components/TextArea';
 
 const Create = () => {
 	const { data, setData, errors, post, processing } = useForm({
-		name: String,
-		description: String,
-		texture: String,
-		porosity: String,
-		chemistry: String,
-		colour: String,
-		structure: String,
+		name: '',
+		description: '',
+		texture: '',
+		porosity: '',
+		chemistry: '',
+		colour: '',
+		structure: '',
 	});
 
 	function handleSubmit(e) {
