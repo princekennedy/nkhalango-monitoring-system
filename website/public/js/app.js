@@ -6331,7 +6331,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var TreeSpecies = function TreeSpecies() {
-  var species = _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.usePage.props.species;
+  var species = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.usePage)().props.species;
+  var data = species.data.data,
+      links = species.meta.links;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {});
 };
 

@@ -2,62 +2,87 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TreeSpeciesStoreRequest;
+use App\Http\Requests\TreeSpeciesUpdateRequest;
+use App\Http\Resources\SoilCollection;
+use App\Http\Resources\TreeSpeciesCollection;
+use App\Http\Resources\TreeSpeciesResource;
+use App\Models\Soil;
 use App\Models\TreeSpecies;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Request;
 
 class TreeSpeciesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function index()
     {
-        return inertia('TreeSpecies/Index');
+        return inertia('TreeSpecies/Index', [
+            'species' => new TreeSpeciesCollection(
+                TreeSpecies::latest()
+                    ->orderByName()
+                    ->filter(Request::only('search'))
+                    ->paginate()
+                    ->appends(Request::all())
+            ),
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function create()
     {
-        //
+        return inertia("TreeSpecies/Create", [
+            'soils' => new SoilCollection(Soil::all()),
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(TreeSpeciesStoreRequest $request)
     {
-        //
+        auth()->user()->create($request->all());
+
+        return Redirect::route('tree-species.index')->with('success', 'Tree Species added.');
     }
 
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\TreeSpecies  $treeSpecies
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function show(TreeSpecies $treeSpecies)
     {
-        //
+        return inertia("TreeSpecies/Show", [
+            "species" => new TreeSpeciesResource($treeSpecies),
+        ]);
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\TreeSpecies  $treeSpecies
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function edit(TreeSpecies $treeSpecies)
     {
-        //
+        return inertia('TreeSpecies/Edit', [
+            "soils" => new SoilCollection(Soil::all()),
+            'species' => new TreeSpeciesResource($treeSpecies),
+        ]);
     }
 
     /**
@@ -65,21 +90,25 @@ class TreeSpeciesController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\TreeSpecies  $treeSpecies
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, TreeSpecies $treeSpecies)
+    public function update(TreeSpeciesUpdateRequest $request, TreeSpecies $treeSpecies)
     {
-        //
+        $treeSpecies->updtae(
+            $request->validated()
+        );
+
+        return Redirect::route('tree-species.index')->with('success', 'Tree species added.');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\TreeSpecies  $treeSpecies
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(TreeSpecies $treeSpecies)
     {
-        //
+        return Redirect::route('tree-species.index')->with('success', 'Tree species added.');
     }
 }

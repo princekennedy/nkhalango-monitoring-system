@@ -4,7 +4,14 @@ import App from '@/Layouts/App';
 import { usePage } from '@inertiajs/inertia-react';
 
 const TreeSpecies = () => {
-	const { species } = usePage.props
+	const { species } = usePage().props;
+
+	const {
+		data: {
+			data
+		},
+		meta: { links }
+	} = species;
 
 	return <>
 

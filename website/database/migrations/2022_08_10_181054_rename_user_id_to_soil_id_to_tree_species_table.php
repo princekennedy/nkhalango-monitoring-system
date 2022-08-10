@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RenamePropertiesToSoilIdToTreeSpeciesTable extends Migration
+class RenameUserIdToSoilIdToTreeSpeciesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,7 @@ class RenamePropertiesToSoilIdToTreeSpeciesTable extends Migration
     public function up()
     {
         Schema::table('tree_species', function (Blueprint $table) {
-            $table->dropColumn("properties");
-            $table->unsignedBigInteger('soil_id')
-                ->after("description");
+            //
         });
     }
 
@@ -28,8 +26,7 @@ class RenamePropertiesToSoilIdToTreeSpeciesTable extends Migration
     public function down()
     {
         Schema::table('tree_species', function (Blueprint $table) {
-            $table->dropColumn('soil_id');
-            $table->json("properties")->nullable();
+            //
         });
     }
 }
