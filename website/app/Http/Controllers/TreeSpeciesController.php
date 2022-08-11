@@ -80,10 +80,13 @@ class TreeSpeciesController extends Controller
      * @param  \App\Models\TreeSpecies  $treeSpecies
      * @return \Inertia\Response
      */
-    public function edit(TreeSpecies $treeSpecies)
+    public function edit($id)
     {
+        $treeSpecies = TreeSpecies::findOrFail($id);
+
         return inertia('TreeSpecies/Edit', [
             "soils" => new SoilCollection(Soil::all()),
+            'statuses' => new StatusCollection(Status::all()),
             'species' => new TreeSpeciesResource($treeSpecies),
         ]);
     }
@@ -95,13 +98,15 @@ class TreeSpeciesController extends Controller
      * @param  \App\Models\TreeSpecies  $treeSpecies
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(TreeSpeciesUpdateRequest $request, TreeSpecies $treeSpecies)
+    public function update(TreeSpeciesUpdateRequest $request, $id)
     {
-        $treeSpecies->updtae(
+        $treeSpecies = TreeSpecies::findOrFail($id);
+
+        $treeSpecies->update(
             $request->validated()
         );
 
-        return Redirect::route('tree-species.index')->with('success', 'Tree species added.');
+        return Redirect::route('tree-species.index')->with('success', 'Tree species details updated.');
     }
 
     /**

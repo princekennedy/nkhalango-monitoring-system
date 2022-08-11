@@ -6445,20 +6445,156 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Layouts_App__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/App */ "./resources/js/Layouts/App.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Components_LoadingButton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/LoadingButton */ "./resources/js/Components/LoadingButton.js");
+/* harmony import */ var _Components_SelectInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/SelectInput */ "./resources/js/Components/SelectInput.js");
+/* harmony import */ var _Components_TextArea__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/TextArea */ "./resources/js/Components/TextArea.js");
+/* harmony import */ var _Components_TextInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/TextInput */ "./resources/js/Components/TextInput.js");
+/* harmony import */ var _Layouts_App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Layouts/App */ "./resources/js/Layouts/App.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_icons_vsc__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-icons/vsc */ "./node_modules/react-icons/vsc/index.esm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
 
 
 
 
 
 var Edit = function Edit() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {});
+  var _species$name, _species$description, _species$soil$id, _species$status$id;
+
+  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.usePage)().props,
+      species = _usePage$props.species,
+      soils = _usePage$props.soils,
+      statuses = _usePage$props.statuses;
+
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.useForm)({
+    _method: "PUT",
+    name: (_species$name = species.name) !== null && _species$name !== void 0 ? _species$name : '',
+    description: (_species$description = species.description) !== null && _species$description !== void 0 ? _species$description : '',
+    soil_id: (_species$soil$id = species.soil.id) !== null && _species$soil$id !== void 0 ? _species$soil$id : '',
+    status_id: (_species$status$id = species.status.id) !== null && _species$status$id !== void 0 ? _species$status$id : ''
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      errors = _useForm.errors,
+      post = _useForm.post,
+      processing = _useForm.processing;
+
+  var handleSubmit = function handleSubmit(e) {
+    e.preventDefault();
+    post(route("tree-species.update", species.id));
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      className: "flex items-center justify-between mb-6",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("h1", {
+        className: "text-3xl font-bold",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.InertiaLink, {
+          href: route('tree-species.index'),
+          className: "text-indigo-600 hover:text-indigo-700",
+          children: "Tree Species"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+          className: "font-medium text-indigo-600",
+          children: " /"
+        }), " Edit"]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.InertiaLink, {
+        className: "text-green-700 focus:outline-none flex",
+        href: route('tree-species.index'),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_icons_vsc__WEBPACK_IMPORTED_MODULE_8__.VscTypeHierarchySub, {
+          className: "mr-2 mt-1"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+          className: "hidden md:inline",
+          children: "All Tree Species"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: "max-w-3xl overflow-hidden bg-white rounded shadow",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
+        onSubmit: handleSubmit,
+        autoComplete: "off",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "p-8 -mb-8 -mr-6",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            className: "w-full pb-8 pr-6",
+            label: "Name",
+            name: "name",
+            type: "text",
+            errors: errors.name,
+            value: data.name,
+            onChange: function onChange(e) {
+              return setData('name', e.target.value);
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Components_SelectInput__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            className: "pb-8 pr-6",
+            name: "soil_id",
+            label: "Suitable soil",
+            value: data.soil_id,
+            errors: errors.soil_id,
+            onChange: function onChange(e) {
+              return setData('soil_id', e.target.value);
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+              value: "",
+              children: "Select from the list"
+            }), soils.data.map(function (soil, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+                value: soil.id,
+                children: soil.name
+              }, index);
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Components_SelectInput__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            className: "pb-8 pr-6",
+            name: "status_id",
+            label: "Status",
+            value: data.status_id,
+            errors: errors.status_id,
+            onChange: function onChange(e) {
+              return setData('status_id', e.target.value);
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+              value: "",
+              children: "Select from the list"
+            }), statuses.data.map(function (status, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+                value: status.id,
+                children: status.name
+              }, index);
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_TextArea__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            className: "w-full pb-8 pr-6",
+            label: "Briefy Description",
+            name: "description",
+            rows: "5",
+            errors: errors.description,
+            value: data.description,
+            onChange: function onChange(e) {
+              return setData('description', e.target.value);
+            }
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          className: "flex items-center justify-end px-8 py-4 bg-gray-100 border-t border-gray-200",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_LoadingButton__WEBPACK_IMPORTED_MODULE_0__["default"], {
+            loading: processing,
+            type: "submit",
+            className: "btn-indigo",
+            children: "Update"
+          })
+        })]
+      })
+    })]
+  });
 };
 
 Edit.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Layouts_App__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Layouts_App__WEBPACK_IMPORTED_MODULE_4__["default"], {
     children: page
   });
 };
