@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LabSessionController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\PopulationController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SoilController;
 use App\Http\Controllers\TreeSpeciesController;
@@ -25,6 +27,8 @@ Route::middleware(["auth"])->group(function () {
     Route::resource("news", NewsController::class)->names("news");
     Route::resource("soil", SoilController::class)->names("soil");
     Route::resource("tree-species", TreeSpeciesController::class)->names("tree-species");
+    Route::resource("lab-sessions", LabSessionController::class)->names("lab-sessions");
+    Route::resource("population", PopulationController::class)->names("population");
     Route::resource("weather", WeatherController::class)->names("weather");
 
     Route::resource("report", ReportController::class)->names("report");
