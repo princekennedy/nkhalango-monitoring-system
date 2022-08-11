@@ -6060,7 +6060,7 @@ var Soil = function Soil() {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
               className: "px-6 py-4 border-t",
               colSpan: "4",
-              children: "No users found."
+              children: "No soil found."
             })
           })]
         })]
@@ -6270,9 +6270,167 @@ Status.layout = function (page) {
 /*!**************************************************!*\
   !*** ./resources/js/Pages/TreeSpecies/Create.js ***!
   \**************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _Layouts_App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Layouts/App */ "./resources/js/Layouts/App.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _Components_TextInput__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/TextInput */ "./resources/js/Components/TextInput.js");
+/* harmony import */ var _Components_TextArea__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/TextArea */ "./resources/js/Components/TextArea.js");
+/* harmony import */ var react_icons_vsc__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-icons/vsc */ "./node_modules/react-icons/vsc/index.esm.js");
+/* harmony import */ var _Components_LoadingButton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Components/LoadingButton */ "./resources/js/Components/LoadingButton.js");
+/* harmony import */ var _Components_SelectInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Components/SelectInput */ "./resources/js/Components/SelectInput.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
+
+
+
+
+
+
+
+
+
+
+
+var Create = function Create() {
+  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.usePage)().props,
+      soils = _usePage$props.soils,
+      statuses = _usePage$props.statuses;
+
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.useForm)({
+    name: '',
+    description: '',
+    soil_id: '',
+    status_id: ''
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      errors = _useForm.errors,
+      post = _useForm.post,
+      processing = _useForm.processing;
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    post(route('tree-species.store'));
+  }
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      className: "flex items-center justify-between mb-6",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("h1", {
+        className: "text-3xl font-bold",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.InertiaLink, {
+          href: route('tree-species.index'),
+          className: "text-indigo-600 hover:text-indigo-700",
+          children: "Tree Species"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+          className: "font-medium text-indigo-600",
+          children: " /"
+        }), " Add Species"]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.InertiaLink, {
+        className: "text-green-700 focus:outline-none flex",
+        href: route('tree-species.index'),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_icons_vsc__WEBPACK_IMPORTED_MODULE_9__.VscTypeHierarchySub, {
+          className: "mr-2 mt-1"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+          className: "hidden md:inline",
+          children: "All Trree Species"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "max-w-3xl overflow-hidden bg-white rounded shadow",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("form", {
+        onSubmit: handleSubmit,
+        autoComplete: "off",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          className: "p-8 -mb-8 -mr-6",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_TextInput__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            className: "w-full pb-8 pr-6",
+            label: "Name",
+            name: "name",
+            type: "text",
+            errors: errors.name,
+            value: data.name,
+            onChange: function onChange(e) {
+              return setData('name', e.target.value);
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_Components_SelectInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
+            className: "pb-8 pr-6",
+            name: "soil_id",
+            label: "Suitable soil",
+            value: data.soil_id,
+            errors: errors.soil_id,
+            onChange: function onChange(e) {
+              return setData('soil_id', e.target.value);
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+              value: "",
+              children: "Select from the list"
+            }), soils.data.map(function (soil, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                value: soil.id,
+                children: soil.name
+              }, index);
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_Components_SelectInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
+            className: "pb-8 pr-6",
+            name: "status_id",
+            label: "Status",
+            value: data.status_id,
+            errors: errors.status_id,
+            onChange: function onChange(e) {
+              return setData('status_id', e.target.value);
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+              value: "",
+              children: "Select from the list"
+            }), statuses.data.map(function (status, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                value: status.id,
+                children: status.name
+              }, index);
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_TextArea__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            className: "w-full pb-8 pr-6",
+            label: "Briefy Description",
+            name: "description",
+            rows: "5",
+            errors: errors.description,
+            value: data.description,
+            onChange: function onChange(e) {
+              return setData('description', e.target.value);
+            }
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          className: "flex items-center justify-end px-8 py-4 bg-gray-100 border-t border-gray-200",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_LoadingButton__WEBPACK_IMPORTED_MODULE_6__["default"], {
+            loading: processing,
+            type: "submit",
+            className: "btn-indigo",
+            children: "Save"
+          })
+        })]
+      })
+    })]
+  });
+};
+
+Create.layout = function (page) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Layouts_App__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: "Add tree species",
+    children: page
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Create);
 
 /***/ }),
 
@@ -6323,7 +6481,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _Layouts_App__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/App */ "./resources/js/Layouts/App.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_icons_vsc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-icons/vsc */ "./node_modules/react-icons/vsc/index.esm.js");
+/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
 
 
 
@@ -6334,12 +6497,103 @@ var TreeSpecies = function TreeSpecies() {
   var species = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.usePage)().props.species;
   var data = species.data.data,
       links = species.meta.links;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {});
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "flex items-center justify-between mb-6",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+        className: "text-3xl font-bold",
+        children: "Tree Species"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+        className: "text-green-700 focus:outline-none flex",
+        href: route('tree-species.create'),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_icons_vsc__WEBPACK_IMPORTED_MODULE_4__.VscAdd, {
+          className: "mr-2 mt-1"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          className: "hidden md:inline",
+          children: "Add Tree Species"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "overflow-x-auto bg-white rounded shadow",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
+        className: "w-full whitespace-nowrap",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+            className: "font-bold text-left",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+              className: "px-6 pt-5 pb-4",
+              children: "Name"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+              className: "px-6 pt-5 pb-4",
+              children: "Suitable Soil"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+              className: "px-6 pt-5 pb-4",
+              children: "Status"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+              className: "px-6 pt-5 pb-4",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_icons_fi__WEBPACK_IMPORTED_MODULE_5__.FiMenu, {})
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tbody", {
+          children: [data.map(function (species) {
+            var id = species.id,
+                name = species.name,
+                soil = species.soil.name,
+                status = species.status.name;
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+              className: "hover:bg-gray-100 focus-within:bg-gray-100",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                className: "border-t",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+                  tabIndex: "-1",
+                  href: route('tree-species.edit', id),
+                  className: "flex items-center px-6 py-4 focus:text-indigo focus:outline-none",
+                  children: name
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                className: "border-t",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+                  tabIndex: "-1",
+                  href: route('tree-species.edit', id),
+                  className: "flex items-center px-6 py-4 focus:text-indigo focus:outline-none",
+                  children: soil
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                className: "border-t",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+                  tabIndex: "-1",
+                  href: route('tree-species.edit', id),
+                  className: "flex items-center px-6 py-4 focus:text-indigo focus:outline-none",
+                  children: status
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                className: "w-px border-t",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+                  tabIndex: "-1",
+                  href: route('tree-species.edit', id),
+                  className: "flex items-center px-4 focus:outline-none",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_icons_vsc__WEBPACK_IMPORTED_MODULE_4__.VscArrowRight, {
+                    className: "block w-6 h-6 text-gray-700 fill-current"
+                  })
+                })
+              })]
+            }, id);
+          }), data.length === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tr", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+              className: "px-6 py-4 border-t",
+              colSpan: "4",
+              children: "No tree species found."
+            })
+          })]
+        })]
+      })
+    })]
+  });
 };
 
 TreeSpecies.layout = function (page) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Layouts_App__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: "TreeSpecies",
+    title: "Tree Species",
     children: page
   });
 };
