@@ -7409,6 +7409,14 @@ __webpack_require__.r(__webpack_exports__);
       link: "tree-species.index",
       icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_icons_ti__WEBPACK_IMPORTED_MODULE_4__.TiTree, {})
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Components_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      text: "Tree Cencus",
+      link: "population.index",
+      icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_icons_ti__WEBPACK_IMPORTED_MODULE_4__.TiTree, {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Components_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      text: "Lab Sessions",
+      link: "lab-sessions.index",
+      icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_icons_vsc__WEBPACK_IMPORTED_MODULE_3__.VscBeaker, {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Components_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
       text: "Weather",
       link: "weather.index",
       icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_icons_wi__WEBPACK_IMPORTED_MODULE_5__.WiDayThunderstorm, {})
