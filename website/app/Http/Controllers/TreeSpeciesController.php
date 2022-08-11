@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TreeSpeciesStoreRequest;
 use App\Http\Requests\TreeSpeciesUpdateRequest;
 use App\Http\Resources\SoilCollection;
+use App\Http\Resources\StatusCollection;
 use App\Http\Resources\TreeSpeciesCollection;
 use App\Http\Resources\TreeSpeciesResource;
 use App\Models\Soil;
+use App\Models\Status;
 use App\Models\TreeSpecies;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
@@ -41,6 +43,7 @@ class TreeSpeciesController extends Controller
     {
         return inertia("TreeSpecies/Create", [
             'soils' => new SoilCollection(Soil::all()),
+            'statuses' => new StatusCollection(Status::all()),
         ]);
     }
 
@@ -52,7 +55,7 @@ class TreeSpeciesController extends Controller
      */
     public function store(TreeSpeciesStoreRequest $request)
     {
-        auth()->user()->create($request->all());
+        TreeSpecies::create($request->all());
 
         return Redirect::route('tree-species.index')->with('success', 'Tree Species added.');
     }
