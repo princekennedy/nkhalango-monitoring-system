@@ -14,7 +14,7 @@ class RenameUserIdToSoilIdToTreeSpeciesTable extends Migration
     public function up()
     {
         Schema::table('tree_species', function (Blueprint $table) {
-            //
+            $table->renameColumn('user_id', 'soil_id');
         });
     }
 
@@ -26,7 +26,7 @@ class RenameUserIdToSoilIdToTreeSpeciesTable extends Migration
     public function down()
     {
         Schema::table('tree_species', function (Blueprint $table) {
-            //
+            $table->renameColumn('soil_id', 'user_id');
         });
     }
 }
