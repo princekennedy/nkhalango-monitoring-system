@@ -17,6 +17,8 @@ export default ({ className }) => {
       <MainMenuItem text="News" link="news.index" icon={<VscCommentDiscussion />} />
       <MainMenuItem text="Soils" link="soil.index" icon={<VscBeaker />} />
       <MainMenuItem text="Tree Species" link="tree-species.index" icon={<TiTree />} />
+      <MainMenuItem text="Tree Cencus" link="population.index" icon={<TiTree />} />
+      <MainMenuItem text="Lab Sessions" link="lab-sessions.index" icon={<VscBeaker />} />
       <MainMenuItem text="Weather" link="weather.index" icon={<WiDayThunderstorm />} />
       <MainMenuItem text="Reports" link="report.index" icon={<VscGraphScatter />} />
       <MainMenuItem text="Users" link="user.index" icon={<FiUsers />} />
