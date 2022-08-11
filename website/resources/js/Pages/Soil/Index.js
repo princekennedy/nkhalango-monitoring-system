@@ -96,7 +96,7 @@ const Soil = () => {
 					{data.length === 0 && (
 						<tr>
 							<td className="px-6 py-4 border-t" colSpan="4">
-								No users found.
+								No soil found.
 							</td>
 						</tr>
 					)}
