@@ -27,7 +27,7 @@ Route::middleware(["auth"])->group(function () {
     Route::resource("news", NewsController::class)->names("news");
     Route::resource("soil", SoilController::class)->names("soil");
     Route::resource("tree-species", TreeSpeciesController::class)->names("tree-species");
-    Route::resource("lab-sessions", LabSessionController::class)->names("lab-sessions");
+    Route::resource("lab-sessions", LabSessionController::class)->names("lab-session");
     Route::resource("population", PopulationController::class)->names("population");
     Route::resource("weather", WeatherController::class)->names("weather");
 
