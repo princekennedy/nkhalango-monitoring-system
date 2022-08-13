@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\TreeSpecies;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -32,6 +33,11 @@ class Soil extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function tree_species()
+    {
+        return $this->hasMany(TreeSpecies::class, 'soil_id', 'id');
+    }
+
     public function scopeOrderByName($query)
     {
         $query->orderBy('name');
@@ -43,14 +49,6 @@ class Soil extends Model
             $query->where(function ($query) use ($search) {
                 $query->where('name', 'like', '%' . $search . '%');
             });
-        }) /* ->when($filters['properties'] ?? null, function ($query, $properties) {
-        $query->whereProperties($properties);
-        })->when($filters['trashed'] ?? null, function ($query, $trashed) {
-        if ($trashed === 'with') {
-        $query->withTrashed();
-        } elseif ($trashed === 'only') {
-        $query->onlyTrashed();
-        }
-        }) */;
+        });
     }
 }
