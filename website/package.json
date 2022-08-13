@@ -30,8 +30,10 @@
     "dependencies": {
         "apexcharts": "^3.35.3",
         "classnames": "^2.3.1",
+        "moment": "^2.29.4",
         "react-apexcharts": "^1.4.0",
         "react-icons": "^4.4.0",
+        "react-moment": "^1.1.2",
         "react-use": "^17.4.0"
     }
 }
