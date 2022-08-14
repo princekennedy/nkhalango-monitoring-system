@@ -25,7 +25,7 @@ export default (props) => {
 	{
 		icon: <GoLightBulb />,
 		title: "Fire Alerts",
-		total: props.alerts
+		total: props.alerts ?? 0
 	}
 	];
 
