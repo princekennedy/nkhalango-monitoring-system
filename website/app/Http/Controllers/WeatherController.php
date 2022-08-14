@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\WeatherCollection;
 use App\Models\Weather;
 use Illuminate\Http\Request;
 
@@ -10,17 +11,22 @@ class WeatherController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function index()
     {
-        return inertia('Weather/Index');
+        return inertia('Weather/Index', [
+            'weather' => new WeatherCollection(
+                Weather::latest()
+                    ->paginate()
+            ),
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function create()
     {
@@ -31,7 +37,7 @@ class WeatherController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function store(Request $request)
     {
@@ -42,7 +48,7 @@ class WeatherController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Weather  $weather
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function show(Weather $weather)
     {
@@ -53,7 +59,7 @@ class WeatherController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Weather  $weather
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function edit(Weather $weather)
     {
@@ -65,20 +71,9 @@ class WeatherController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Weather  $weather
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function update(Request $request, Weather $weather)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Weather  $weather
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Weather $weather)
     {
         //
     }
