@@ -39,12 +39,6 @@ const Index = () => {
 				</thead>
 				<tbody>
 					{data.map(({ id, humidity, temperature, fire_status, created_at }) => {
-						/* const id = w.id,
-							humidity = w.humidity,
-							temperature = w.temperature,
-							fire_status = w.fire_status,
-							created_at = w.created_at
- */
 						return (
 							<tr
 								key={id}
