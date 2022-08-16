@@ -1,8 +1,8 @@
 import numpy as np
-# import cv2
 
 
 def fire_alarm():
+    # TODO set alarm
     pass
 
 
@@ -15,14 +15,11 @@ smoothed while minimizing too much blurring.
 
 
 def fire_analyzer(image, cv2, frame):
-    # import cv2 to use this code
-    # read image
-    # src = cv2.imread(image, cv2.IMREAD_UNCHANGED)
-    # blur = cv2.GaussianBlur(src, (21, 21), 0)
+
+    # Determine whether fire frames we detected or not
+    fire_detected = False
 
     # Smoothing input source image
-    # dst = cv2.GaussianBlur(src, size, sigmaX[, dst[, sigmaY[, borderType=BORDER_DEFAULT]]] )
-    fire_detected = False
     blur = cv2.GaussianBlur(frame, (21, 21), 0)
 
     hsv = cv2.cvtColor(blur, cv2.COLOR_BGR2HSV)
@@ -35,9 +32,10 @@ def fire_analyzer(image, cv2, frame):
 
     output = cv2.bitwise_and(frame, hsv, mask=mask)
     no_red = cv2.countNonZero(mask)
-    cv2.imshow("Fire detector", output)
 
-    # print("output:", frame)
+    # TODO:: delete the code on RPi
+    # display the image after being analysed
+    cv2.imshow("Fire detector", output)
 
     if int(no_red) > 20000:
         fire_detected = True
@@ -45,7 +43,8 @@ def fire_analyzer(image, cv2, frame):
     # send data to server
     # store_weather_update(fire_detected)
 
+    # TODO alarm controller
     # set fire alarming process
     fire_alarm()
 
-    return
+    return fire_detected
