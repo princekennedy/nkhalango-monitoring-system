@@ -1,3 +1,3 @@
 - [DetecTree: a Python library for tree detection from aerial imagery | AI & Cities | Martí Bosch](https://www.youtube.com/watch?v=USwF2KyxVjY)
 - [Crop Detection from Satellite Imagery using Deep Learning](https://github.com/karimmamer/CropDetectionDL)
-- []()
+- [Detecting Trees from an Aerial Image](https://www.youtube.com/watch?v=LpZ1sK0Ax34)
