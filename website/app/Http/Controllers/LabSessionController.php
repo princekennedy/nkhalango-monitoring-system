@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Resources\LabSessionCollection;
 use App\Http\Resources\LabSessionResource;
 use App\Models\LabSession;
-use Illuminate\Support\Facades\Request;
+use App\Models\Soil;
+use Illuminate\Http\Request;
 
 class LabSessionController extends Controller
 {
@@ -25,24 +26,32 @@ class LabSessionController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Inertia\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Inertia\Response
      */
     public function store(Request $request)
     {
-        //
+        try {
+            // get soil id
+            $soil = Soil::whereName($request->get('soil_type'))
+                ->firstOrFail();
+
+            $created = LabSession::create([
+                'probe_value' => $request->probe_value,
+                'soil_id' => $soil->id,
+            ]);
+
+            return response()->json([
+                "message" => "Added successfully.",
+            ], 200);
+
+        } catch (\Throwable $th) {
+            return \response()->json([
+                'status' => $th->getCode(),
+                'message' => $th->getMessage(),
+            ]);
+        }
     }
 
     /**
@@ -56,16 +65,5 @@ class LabSessionController extends Controller
         return \inertia("LabSession/Show", [
             "session" => new LabSessionResource($labSession->load('tree_species')),
         ]);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\LabSession  $labSession
-     * @return \Inertia\Response
-     */
-    public function destroy(LabSession $labSession)
-    {
-        //
     }
 }

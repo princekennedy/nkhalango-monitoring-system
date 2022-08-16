@@ -13,6 +13,7 @@ class LabSession extends Model
 
     protected $fillable = [
         "soil_id",
+        "status_id",
         "probe_value",
     ];
 

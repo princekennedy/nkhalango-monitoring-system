@@ -24,46 +24,17 @@ class WeatherController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Inertia\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Inertia\Response
      */
     public function store(Request $request)
     {
-        //
-    }
+        Weather::create($request->all());
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Weather  $weather
-     * @return \Inertia\Response
-     */
-    public function show(Weather $weather)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Weather  $weather
-     * @return \Inertia\Response
-     */
-    public function edit(Weather $weather)
-    {
-        //
+        return response()->json([
+            "message" => 'Weather recorded successfully.',
+        ]);
     }
 
     /**
@@ -71,10 +42,9 @@ class WeatherController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Weather  $weather
-     * @return \Inertia\Response
      */
     public function update(Request $request, Weather $weather)
     {
-        //
+        return;
     }
 }

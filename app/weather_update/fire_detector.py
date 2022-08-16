@@ -22,6 +22,7 @@ def fire_analyzer(image, cv2, frame):
 
     # Smoothing input source image
     # dst = cv2.GaussianBlur(src, size, sigmaX[, dst[, sigmaY[, borderType=BORDER_DEFAULT]]] )
+    fire_detected = False
     blur = cv2.GaussianBlur(frame, (21, 21), 0)
 
     hsv = cv2.cvtColor(blur, cv2.COLOR_BGR2HSV)
@@ -35,12 +36,16 @@ def fire_analyzer(image, cv2, frame):
     output = cv2.bitwise_and(frame, hsv, mask=mask)
     no_red = cv2.countNonZero(mask)
     cv2.imshow("Fire detector", output)
+
     # print("output:", frame)
+
     if int(no_red) > 20000:
-        print('Fire detected')
+        fire_detected = True
 
     # send data to server
+    # store_weather_update(fire_detected)
+
     # set fire alarming process
     fire_alarm()
 
-    return False
+    return
