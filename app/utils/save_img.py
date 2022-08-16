@@ -15,7 +15,7 @@ def screenshot(frame, cv2):
 
 
 def delete_file(path):
-    # TODO delete the video after analysis
+    # delete the video after analysis
     if os.path.exists(path):
         os.remove(path)
     else:
