@@ -1,2 +1,4 @@
 def tree_analyzer(image_path, cv2, frame):
-    pass
+    total_trees = 0
+    # TODO analysis tree population from saved image
+    return total_trees
