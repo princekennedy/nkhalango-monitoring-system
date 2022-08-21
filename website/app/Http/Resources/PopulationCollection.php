@@ -17,9 +17,9 @@ class PopulationCollection extends ResourceCollection
         return [
             "data" => $this->collection->map->only(
                 'id',
-                'created_at',
                 'total',
                 'species',
+                'created_at',
             ),
             "meta" => [
 
