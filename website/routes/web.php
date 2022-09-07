@@ -12,7 +12,7 @@ use App\Http\Controllers\WeatherController;
 use Illuminate\Support\Facades\Route;
 
 Route::get("/", function () {
-    return inertia("Home");
+    return view("home");
 });
 
 Route::middleware(["auth"])->group(function () {

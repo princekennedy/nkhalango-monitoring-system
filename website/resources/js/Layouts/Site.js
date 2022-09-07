@@ -10,7 +10,7 @@ export default function Site({ title, children }) {
 	useEffect(() => {
 		if (auth.user) setIsLoggedIn(true)
 		else setIsLoggedIn(false)
-	}, [])
+	}, [isLoggedIn])
 
 	return (
 		<>
