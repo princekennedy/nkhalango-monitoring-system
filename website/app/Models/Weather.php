@@ -23,4 +23,8 @@ class Weather extends Model
         return $this->belongsTo(Status::class, 'fire_status_id', 'id');
     }
 
+    public function scopeActive($query)
+    {
+        $query->where('fire_status_id', 1);
+    }
 }
