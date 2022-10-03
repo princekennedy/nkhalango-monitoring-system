@@ -8,6 +8,7 @@ import DashboardAvatars from './DashboardAvatars';
 import TemperatureHumidity from './TemperatureHumidity';
 
 import Chart from 'react-apexcharts'
+import axios from 'axios'
 import ChartSettings from './ChartSettings';
 import Statistics from './Statistics';
 
@@ -18,6 +19,7 @@ const Dashboard = () => {
 	const [pieDataset, setPieDataset] = useState([])
 	const { data } = usePage().props;
 
+	console.log(axios);
 
 	useEffect(() => {
 		setBarDataset(data.pie)

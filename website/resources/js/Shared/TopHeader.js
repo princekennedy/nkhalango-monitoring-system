@@ -28,12 +28,12 @@ export default () => {
           {/* <VscAccount
             className="w-5 h-5 text-gray-800 fill-current group-hover:text-green-600 focus:text-green-600"
           /> */}
-          <img src={auth.user.avatar} className="w-5 h-5 text-gray-800 fill-current group-hover:text-green-600 focus:text-green-600" />
+          <img src={auth.user.avatar} alt="..." className="w-5 h-5 text-gray-800 fill-current group-hover:text-green-600 focus:text-green-600" />
         </div>
         <div className={menuOpened ? '' : 'hidden'}>
           <div className="absolute top-0 right-0 left-auto z-20 py-2 mt-8 text-sm whitespace-nowrap bg-white rounded shadow-xl">
             {<InertiaLink
-              href={route('user.show', auth.user.id)}
+              href={route('user.edit', auth.user.id)}
               className="block px-6 py-2 hover:bg-green-600 hover:text-white"
               onClick={() => setMenuOpened(false)}
             >
