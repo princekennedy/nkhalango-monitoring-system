@@ -5,10 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title inertia>{{ config('app.name', 'NMS') }}</title>
+        <link
+				href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
+				rel="stylesheet"
+			/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+
+        {{-- <link rel="stylesheet" href="{{ asset('css/home.css') }}"> --}}
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        
         @routes
+
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/home.js') }}" defer></script>
+        
         @inertiaHead
     </head>
     <body class="font-sans antialiased">
