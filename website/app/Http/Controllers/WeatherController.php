@@ -14,14 +14,8 @@ class WeatherController extends Controller
      */
     public function index(Request $request)
     {
-        $weather = Weather::latest();
-
-        if ($request->wantsJson() && $request->get('d')) {
-            return new WeatherCollection($weather->paginate(4));
-        }
-
         return inertia('Weather/Index', [
-            'weather' => new WeatherCollection($weather->paginate(7)),
+            'weather' => new WeatherCollection(Weather::latest()->paginate()),
         ]);
     }
 

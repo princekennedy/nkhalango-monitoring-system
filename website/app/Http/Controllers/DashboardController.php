@@ -2,46 +2,66 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\WeatherCollection;
+use App\Models\LabSession;
 use App\Models\Population;
 use App\Models\TreeSpecies;
 use App\Models\User;
 use App\Models\Weather;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::all();
+        $users = User::latest();
 
-        $totalPopulation = Population::latest()->first()->count();
+        $population = Population::latest()->first()->total;
 
-        $treeSpecies = TreeSpecies::all()->count();
+        $totalT = Population::latest()->get();
 
-        $fireAlerts = Weather::latest()->active()->count();
+        $census = $totalT->groupBy(function ($row) {
+            return Carbon::parse($row->created_at)->format('H:m:s a');
+        })->map(function ($sessions) {
+            return $sessions->count();
+        })->take(10);
 
-        $tempHum = Weather::latest()->get();
+        $treeSpecies = TreeSpecies::active()->count();
+
+        $labSessions = LabSession::with("soil")->get();
+
+        $soilData = $labSessions->groupBy(function ($row, $key) {
+            return $row->soil->name;
+        })->map(function ($sessions) {
+            return $sessions->count();
+        });
+
+        $weather = Weather::latest();
+        $fireAlerts = $weather->active()->count();
+
+        if ($request->wantsJson()) {
+            return [
+                "temp" => new WeatherCollection($weather->limit(5)->get()),
+                'bar' => [
+                    "series" => $census->values(),
+                    "categories" => $census->keys(),
+                ],
+                'pie' => [
+                    "labels" => $soilData->keys(),
+                    "series" => $soilData->values(),
+                ],
+            ];
+        }
 
         return inertia('Dashboard/Index', [
-            "users" => $users,
-            "totalPopulation" => $totalPopulation,
-            "treeSpecies" => $treeSpecies,
-            "tempHum" => $tempHum,
-            "fireAlerts" => $fireAlerts,
-
             "data" => [
-                "pie" => $this->populationBar(),
-                "bar" => $this->soilsPie(),
+                "totalUsers" => $users->get(),
+                "users" => $users->limit(4)->get(),
+                "population" => $population,
+                "species" => $treeSpecies,
+                "alerts" => $fireAlerts,
             ],
         ]);
-    }
-
-    public function soilsPie()
-    {
-        return [];
-    }
-
-    public function populationBar()
-    {
-        return [];
     }
 }
