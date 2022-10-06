@@ -34,6 +34,11 @@ class LabSession extends Model
         return $this->hasManyThrough(TreeSpecies::class, Soil::class, 'id', 'soil_id', 'soil_id');
     }
 
+    public function scopeActive($query)
+    {
+        $query->where('status_id', 1);
+    }
+
     public function status()
     {
         return $this->belongsTo(Status::class);

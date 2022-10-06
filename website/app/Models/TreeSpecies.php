@@ -35,6 +35,11 @@ class TreeSpecies extends Model
         $query->orderBy('name');
     }
 
+    public function scopeActive($query)
+    {
+        $query->where('status_id', 1);
+    }
+
     public function scopeFilter($query, array $filters)
     {
         $query->when($filters['search'] ?? null, function ($query, $search) {
