@@ -1,34 +1,23 @@
 import React from 'react';
 import { InertiaLink } from '@inertiajs/inertia-react';
 
-export default () => {
-	const User01 = 'https://preview.cruip.com/mosaic/images/user-36-01.jpg';
-	const User02 = 'https://preview.cruip.com/mosaic/images/user-36-02.jpg';
-	const User03 = 'https://preview.cruip.com/mosaic/images/user-36-03.jpg';
-	const User04 = 'https://preview.cruip.com/mosaic/images/user-36-04.jpg';
+export default ({ users }) => {
+	const avatars = [
+		'https://preview.cruip.com/mosaic/images/user-36-01.jpg',
+		'https://preview.cruip.com/mosaic/images/user-36-02.jpg',
+		'https://preview.cruip.com/mosaic/images/user-36-03.jpg',
+		'https://preview.cruip.com/mosaic/images/user-36-04.jpg',
+	]
 
 	return (
 		<ul className="flex flex-wrap md:justify-center sm:justify-start sm:mb-0 -space-x-3 -ml-px">
-			<li>
-				<InertiaLink className="block" to="#0">
-					<img className="w-9 h-9 rounded-full" src={User01} width="36" height="36" alt="User 01" />
-				</InertiaLink>
-			</li>
-			<li>
-				<InertiaLink className="block" to="#0">
-					<img className="w-9 h-9 rounded-full" src={User02} width="36" height="36" alt="User 02" />
-				</InertiaLink>
-			</li>
-			<li>
-				<InertiaLink className="block" to="#0">
-					<img className="w-9 h-9 rounded-full" src={User03} width="36" height="36" alt="User 03" />
-				</InertiaLink>
-			</li>
-			<li>
-				<InertiaLink className="block" to="#0">
-					<img className="w-9 h-9 rounded-full" src={User04} width="36" height="36" alt="User 04" />
-				</InertiaLink>
-			</li>
+			{
+				users && users.map((row, key) => (<li key={key}>
+					<InertiaLink className="block" to="#0">
+						<img className="w-9 h-9 rounded-full" src={avatars[key]} width="36" height="36" alt="User 01" />
+					</InertiaLink>
+				</li>))
+			}
 			<li>
 				<InertiaLink
 					href={route('user.create')}

@@ -1,19 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 const useGet = (url, params = {}) => {
-	const [data, setData] = useState(null);
+	const [data, setData] = useState([]);
 
-	console.log(params);
-
-	useEffect(async () => {
+	async () => {
 		await axios.get(url, {
 			params
 		})
 			.then((response) => response.data)
 			.then((result) => setData(result.data))
 			.catch((e) => alert(e.message))
-	}, [url]);
+	}
 
 	return [data];
 };

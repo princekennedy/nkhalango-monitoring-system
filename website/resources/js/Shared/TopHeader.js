@@ -1,19 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { InertiaLink, usePage } from '@inertiajs/inertia-react';
 import {
-  VscLocation
+  VscAccount,
+  VscLocation,
+  VscWatch
 } from 'react-icons/vsc'
+import { formatDate } from '@/Utils';
 
 export default () => {
   const { auth } = usePage().props;
   const [menuOpened, setMenuOpened] = useState(false);
 
+  const [time, setTime] = useState("Loading...");
+
+  useEffect(() => {
+    const interval = setInterval(() => setTime(formatDate()), 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
     <div className="flex items-center justify-between w-full p-4 text-sm bg-white border-b md:py-0 md:px-12 d:text-md">
       <div className="mt-1 mr-4 flex">
-        <VscLocation className='mt-1' />
-        <span className='text-gray-800 uppercase'>
-          chikangawa site
+        <VscWatch />
+        <span className='text-gray-800 text-sm'>
+          {time}
         </span>
       </div>
       <div className="relative">
@@ -25,10 +38,10 @@ export default () => {
             <span>{auth.user.first_name}</span>
             <span className="hidden ml-1 md:inline">{auth.user.last_name}</span>
           </div>
-          {/* <VscAccount
+          <VscAccount
             className="w-5 h-5 text-gray-800 fill-current group-hover:text-green-600 focus:text-green-600"
-          /> */}
-          <img src={auth.user.avatar} alt="..." className="w-5 h-5 text-gray-800 fill-current group-hover:text-green-600 focus:text-green-600" />
+          />
+          {/* <img src={auth.user.avatar} alt="..." className="w-5 h-5 text-gray-800 fill-current group-hover:text-green-600 focus:text-green-600" /> */}
         </div>
         <div className={menuOpened ? '' : 'hidden'}>
           <div className="absolute top-0 right-0 left-auto z-20 py-2 mt-8 text-sm whitespace-nowrap bg-white rounded shadow-xl">

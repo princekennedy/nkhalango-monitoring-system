@@ -17,14 +17,14 @@ class DashboardController extends Controller
     {
         $users = User::latest();
 
-        $population = Population::latest()->first()->total;
+        $population = Population::latest()->first()->total ?? 0;
 
         $totalT = Population::latest()->get();
 
         $census = $totalT->groupBy(function ($row) {
-            return Carbon::parse($row->created_at)->format('H:m:s a');
+            return Carbon::parse($row->created_at)->format('H:i:s a');
         })->map(function ($sessions) {
-            return $sessions->count();
+            return $sessions->first()->total;
         })->take(10);
 
         $treeSpecies = TreeSpecies::active()->count();

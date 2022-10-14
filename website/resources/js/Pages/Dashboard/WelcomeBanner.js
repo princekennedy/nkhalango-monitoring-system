@@ -1,11 +1,11 @@
 import { usePage } from '@inertiajs/inertia-react';
 import React from 'react';
 
-export default () => {
+export default ({ showNote }) => {
 	const { auth } = usePage().props;
 
 	return (
-		<div className="relative bg-green-200 p-4 sm:p-6 rounded-sm overflow-hidden mb-8">
+		showNote && <div className="relative bg-green-200 p-4 sm:p-6 rounded-sm overflow-hidden mb-8">
 
 			{/* Background illustration */}
 			<div className="absolute right-0 top-0 -mt-4 mr-16 pointer-events-none hidden xl:block" aria-hidden="true">

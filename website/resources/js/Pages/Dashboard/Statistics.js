@@ -5,22 +5,24 @@ import { GoLightBulb } from 'react-icons/go';
 import Card from './Card';
 
 
-export default (props) => {
+export default (data) => {
+
+	const props = data.props
 
 	const stat = [{
 		icon: <FiUsers />,
 		title: "Total Users",
-		total: props.users
+		total: props.totalUsers.length ?? 0
 	},
 	{
 		icon: <CgTrees />,
 		title: "Forest Population",
-		total: props.population
+		total: props.population ?? 0
 	},
 	{
 		icon: <CgFeed />,
-		title: "Blogs",
-		total: props.news
+		title: "Tree Species",
+		total: props.species ?? 0
 	},
 	{
 		icon: <GoLightBulb />,

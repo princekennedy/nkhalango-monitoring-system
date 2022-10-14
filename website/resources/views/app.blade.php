@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         {{-- <link rel="stylesheet" href="{{ asset('css/home.css') }}"> --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         
         @routes
