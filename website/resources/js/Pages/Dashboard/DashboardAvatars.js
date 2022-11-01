@@ -14,7 +14,7 @@ export default ({ users }) => {
 			{
 				users && users.map((row, key) => (<li key={key}>
 					<InertiaLink className="block" to="#0">
-						<img className="w-9 h-9 rounded-full" src={avatars[key]} width="36" height="36" alt="User 01" />
+						<img className="w-9 h-9 rounded-full" src={avatars[key]} width="36" height="36" alt={"User " + key} />
 					</InertiaLink>
 				</li>))
 			}

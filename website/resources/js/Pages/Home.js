@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { InertiaLink, Link } from '@inertiajs/inertia-react';
 import Site from '@/Layouts/Site';
+import { WelcomeContext, WelcomeProvider } from '@/Utils/WelcomeContext';
 
 const Home = () => {
+
+
 	return (
 		<>
 			<main id="main">

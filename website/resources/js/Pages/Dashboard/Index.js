@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { InertiaLink, usePage } from '@inertiajs/inertia-react';
 
@@ -14,13 +14,11 @@ import BarChart from '@/Components/Charts/BarChart';
 
 import { ThreeCircles } from "react-loader-spinner";
 import ReactHowler from 'react-howler';
-
-
+import { WelcomeContext } from '@/Utils/WelcomeContext';
 
 const Dashboard = () => {
 	let alarm = './files/sound.mp3';
 	const { data } = usePage().props
-
 
 	const [dataset, setDataset] = useState({
 		pie: {
@@ -38,7 +36,7 @@ const Dashboard = () => {
 
 	const [isLoading, setIsLoading] = useState(false)
 	const [fireDetected, setFireDetected] = useState(false)
-	const [isWelcomed, setIsWelcomed] = useState(true)
+	const [welcome, setWelcome] = useContext(WelcomeContext)
 
 	const params = {
 		weather: {
@@ -58,7 +56,7 @@ const Dashboard = () => {
 
 	useEffect(() => {
 		getData()
-		const interval = setInterval(() => { setIsWelcomed(false); getData() }, 10000);
+		const interval = setInterval(() => { setWelcome(false); getData() }, 10000);
 		return () => clearInterval(interval);
 	}, []);
 
@@ -77,7 +75,7 @@ const Dashboard = () => {
 				playing={fireDetected}
 			/>
 
-			<WelcomeBanner showNote={isWelcomed} />
+			<WelcomeBanner showNote={welcome} />
 
 			<div className="flex justify-between items-center">
 
@@ -89,7 +87,7 @@ const Dashboard = () => {
 						href={route('report.create')}
 					>
 						<VscCloudDownload />
-						<span className="hidden md:inline ml-2"> Download</span>
+						<span className="hidden md:inline ml-2"> Generate Report</span>
 					</InertiaLink>}
 				</div>
 
