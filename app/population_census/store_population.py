@@ -7,7 +7,7 @@ def store_population(total=None):
         url = BASE_API_URL + '/weather/add'
 
         params = {
-            "total": total
+            total: total
         }
 
         # send results to api

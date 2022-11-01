@@ -9,7 +9,6 @@ try:
     from weather_update.dht11_sensor import read_th
 
     from population_census.tree_detector import tree_analyzer
-    from population_census.store_population import store_population
 
     from lab_session.read_soil_m import read_soil_moisture
     from lab_session.store_lab_session import store_lab_session
@@ -22,12 +21,11 @@ except ModuleNotFoundError as e:
 def record_lab_session():
     # on SWITCH ON get probe value from soil sensor
     moisture = read_soil_moisture(SOIL_SENSOR_PORT)
-    # print(res.status_code, res.reason, res.text)
 
     return store_lab_session(moisture=moisture)
 
 
-# TODO check and update use work
+# TODO:: check and update user work
 def update_user_work():
     pass
 
@@ -69,9 +67,6 @@ def illuminate():
                         frame=frame
                     )
 
-                    # store tree population
-                    store_population(total=total_trees)
-
                     # prepare params for weather
                     # read fire frames and smoke
                     fire_status = fire_analyzer(
@@ -93,7 +88,7 @@ def illuminate():
                     # Free up space by removing the image
                     delete_file(saved_image)
 
-                    print("Data sent")
+                    print("Data saved")
 
                     # start timeout again
                     camera_active_time = 0
