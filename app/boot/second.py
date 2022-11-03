@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from skimage.feature import match_template
 import cv2
 
-ImagenTotal = np.asarray(Image.open('boot/Rst/OlivoTotal.png'))
+ImagenTotal = np.asarray(Image.open('boot/imgs/trees.jpeg'))
 
 print(ImagenTotal)
 

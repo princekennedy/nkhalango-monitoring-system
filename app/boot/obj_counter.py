@@ -10,7 +10,7 @@ import os
 os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
 
 # img = cv2.imread('image1.jpg')
-img = cv2.imread('boot/Rst/OlivoTotal.png')
+img = cv2.imread('boot/imgs/s.png')
 img1 = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
 """ plt.figure(figsize=(10,10))
 plt.axis('off')
