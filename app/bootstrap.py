@@ -2,7 +2,7 @@ try:
     from utils.monitoring import start_camera
     from utils.folders import file_path
     from utils.save_img import screenshot, delete_file
-    from utils.config import ANALYSIS_TIMEOUT, DHT_PORT, SOIL_SENSOR_PORT
+    from utils.config import ANALYSIS_TIMEOUT, DHT_PORT
 
     from ai.fire_detector import fire_analyzer
     from sensors.dht11_sensor import read_th
@@ -63,7 +63,7 @@ def illuminate():
                     data = {
                         "temperature": temperature,
                         "humidity": humidity,
-                        "fire_status":fire_status,
+                        "fire_status": fire_status,
                         "tree_population": total_trees
                     }
 
