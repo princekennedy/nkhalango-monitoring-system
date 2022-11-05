@@ -15,10 +15,7 @@ const Home = () => {
 						<header className="section-header">
 							<h3>About Us</h3>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-								ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-								aliquip ex ea commodo consequat.
+								Tech lovers and yet passionate about the environment the idea of Nkhalango monitoring system was born to aid forest owners in the sustainable management of their forests which involves a broad range of factors such as tree population and resilience against fire.
 							</p>
 						</header>
 						<div className="row about-cols">
@@ -38,10 +35,7 @@ const Home = () => {
 										<Link href="#">Our Mission</Link>
 									</h2>
 									<p>
-										Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
-										tempor ut labore et dolore magna aliqua. Ut enim ad minim
-										veniam, quis nostrud exercitation ullamco laboris nisi ut
-										aliquip ex ea commodo consequat.
+										NMS works on things that matter. The best technology that exists to provide remote sensing of forest, giving up to date data on tree population forest regions.
 									</p>
 								</div>
 							</div>
@@ -61,10 +55,7 @@ const Home = () => {
 										<Link href="#">Our Plan</Link>
 									</h2>
 									<p>
-										Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-										doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-										illo inventore veritatis et quasi architecto beatae vitae dicta
-										sunt explicabo.
+										In the near future, remote sensing and Geographical Information System (GIS) could be used in environmental monitoring for land use/land cover analysis, habitat mapping and disaster management.
 									</p>
 								</div>
 							</div>
@@ -84,9 +75,7 @@ const Home = () => {
 										<Link href="#">Our Vision</Link>
 									</h2>
 									<p>
-										Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit,
-										sed quia magni dolores eos qui ratione voluptatem sequi nesciunt
-										Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+										To change the way, we think about saving the planet. Bringing innovation to the fight against climate change
 									</p>
 								</div>
 							</div>
@@ -100,47 +89,14 @@ const Home = () => {
 						<header className="section-header wow fadeInUp">
 							<h3>Our Objectives</h3>
 							<p>
-								Laudem latine persequeris id sed, ex fabulas delectus quo. No vel
-								partiendo abhorreant vituperatoribus, ad pro quaestio laboramus. Ei
-								ubique vivendum pro. At ius nisl accusam lorenta zanos paradigno
-								tridexa panatarel.
+								The <strong>general objective </strong> of this project is to build a forest monitoring system that analyses soil properties, calculates tree population, monitors forests regions, and gives user control access remotely.
+							</p>
+							<p>
+								To achieve the main objective, the <strong>specific objectives</strong> are accordingly to:
 							</p>
 						</header>
 						<div className="row">
-							<div
-								className="col-lg-4 col-md-6 box"
-								data-aos="fade-up"
-								data-aos-delay={100}
-							>
-								<div className="icon">
-									<i className="bi bi-briefcase" />
-								</div>
-								<h4 className="title">
-									<Link href="">Lorem Ipsum</Link>
-								</h4>
-								<p className="description">
-									Voluptatum deleniti atque corrupti quos dolores et quas molestias
-									excepturi sint occaecati cupiditate non provident
-								</p>
-							</div>
-							<div
-								className="col-lg-4 col-md-6 box"
-								data-aos="fade-up"
-								data-aos-delay={200}
-							>
-								<div className="icon">
-									<i className="bi bi-card-checklist" />
-								</div>
-								<h4 className="title">
-									<Link href="">Dolor Sitema</Link>
-								</h4>
-								<p className="description">
-									Minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-									aliquip ex ea commodo consequat tarad limino ata
-								</p>
-							</div>
-							<div
-								className="col-lg-4 col-md-6 box"
+							<div className="col-lg-4 col-md-6 box"
 								data-aos="fade-up"
 								data-aos-delay={300}
 							>
@@ -148,27 +104,10 @@ const Home = () => {
 									<i className="bi bi-bar-chart" />
 								</div>
 								<h4 className="title">
-									<Link href="">Sed ut perspiciatis</Link>
+									<Link href="">Trees Population</Link>
 								</h4>
 								<p className="description">
-									Duis aute irure dolor in reprehenderit in voluptate velit esse
-									cillum dolore eu fugiat nulla pariatur
-								</p>
-							</div>
-							<div
-								className="col-lg-4 col-md-6 box"
-								data-aos="fade-up"
-								data-aos-delay={200}
-							>
-								<div className="icon">
-									<i className="bi bi-binoculars" />
-								</div>
-								<h4 className="title">
-									<Link href="">Magni Dolores</Link>
-								</h4>
-								<p className="description">
-									Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-									officia deserunt mollit anim id est laborum
+									Count tree population for accurate record keeping;
 								</p>
 							</div>
 							<div
@@ -180,27 +119,25 @@ const Home = () => {
 									<i className="bi bi-brightness-high" />
 								</div>
 								<h4 className="title">
-									<Link href="">Nemo Enim</Link>
+									<Link href="">Fire Alerts</Link>
 								</h4>
 								<p className="description">
-									At vero eos et accusamus et iusto odio dignissimos ducimus qui
-									blanditiis praesentium voluptatum deleniti atque
+									Asses the type of smoke and trigger an alarm for elevated carbon dioxide levels; Monitor high temperatures Alert forest monitoring control room when an alarm has been triggered.
 								</p>
 							</div>
 							<div
 								className="col-lg-4 col-md-6 box"
 								data-aos="fade-up"
-								data-aos-delay={400}
+								data-aos-delay={200}
 							>
 								<div className="icon">
-									<i className="bi bi-calendar4-week" />
+									<i className="bi bi-binoculars" />
 								</div>
 								<h4 className="title">
-									<Link href="">Eiusmod Tempor</Link>
+									<Link href="">Soil Sampling</Link>
 								</h4>
 								<p className="description">
-									Et harum quidem rerum facilis est et expedita distinctio. Nam
-									libero tempore, cum soluta nobis est eligendi
+									Analyze soil properties to determine what tree species suits a particular geographical location;
 								</p>
 							</div>
 						</div>
@@ -213,8 +150,7 @@ const Home = () => {
 						<div className="section-header">
 							<h3>Team</h3>
 							<p>
-								Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-								accusantium doloremque
+								Team of valuable people that provides technical expertise and software-based solutions to environmental problems.
 							</p>
 						</div>
 						<div className="row">
@@ -224,8 +160,10 @@ const Home = () => {
 									<img src="img/team-2.jpg" className="img-fluid" alt="" />
 									<div className="member-info">
 										<div className="member-info-content">
-											<h4>Sarah Jhonson</h4>
-											<span>Product Manager</span>
+											<h4>
+												Temwanina Kaponda
+											</h4>
+											<span>Co-Founder</span>
 											<div className="social">
 												<Link href="">
 													<i className="bi bi-twitter" />
@@ -249,8 +187,10 @@ const Home = () => {
 									<img src="img/team-3.jpg" className="img-fluid" alt="" />
 									<div className="member-info">
 										<div className="member-info-content">
-											<h4>William Anderson</h4>
-											<span>CTO</span>
+											<h4>
+												Mclean Kasambala
+											</h4>
+											<span>Founder & CEO</span>
 											<div className="social">
 												<Link href="">
 													<i className="bi bi-twitter" />
@@ -280,8 +220,7 @@ const Home = () => {
 						<div className="section-header">
 							<h3>Contact Us</h3>
 							<p>
-								Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-								accusantium doloremque
+								Got a forest? We help you manage it sustainably. We make sure you monitor the forest regions remotely and take action when necessary.
 							</p>
 						</div>
 						<div className="row contact-info">
