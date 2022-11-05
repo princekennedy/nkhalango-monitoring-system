@@ -4,30 +4,16 @@ try:
     from utils.save_img import screenshot, delete_file
     from utils.config import ANALYSIS_TIMEOUT, DHT_PORT, SOIL_SENSOR_PORT
 
-    from weather_update.fire_detector import fire_analyzer
-    from weather_update.store_weather_updates import store_weather_updates
-    from weather_update.dht11_sensor import read_th
+    from ai.fire_detector import fire_analyzer
+    from sensors.dht11_sensor import read_th
 
-    from population_census.tree_detector import tree_analyzer
+    from ai.tree_detector import count_trees
 
-    from lab_session.read_soil_m import read_soil_moisture
-    from lab_session.store_lab_session import store_lab_session
+    from api.general import store as save_data
 
 except ModuleNotFoundError as e:
     print(e.msg)
     exit(1)
-
-
-def record_lab_session():
-    # on SWITCH ON get probe value from soil sensor
-    moisture = read_soil_moisture(SOIL_SENSOR_PORT)
-
-    return store_lab_session(moisture=moisture)
-
-
-# TODO:: check and update user work
-def update_user_work():
-    pass
 
 
 def illuminate():
@@ -52,7 +38,7 @@ def illuminate():
 
                 # TODO: Remove the below code on Rpi
                 # display current frame
-                cv2.imshow('Nkhalango Monitoring System Camera', frame)
+                # cv2.imshow('Nkhalango Monitoring System Camera', frame)
 
                 # Do all the callbacks
                 if camera_active_time == ANALYSIS_TIMEOUT:
@@ -61,11 +47,7 @@ def illuminate():
 
                     # analysis trees from the picture saved
                     # Send the data to an api
-                    total_trees = tree_analyzer(
-                        image_path=saved_image,
-                        cv2=cv2,
-                        frame=frame
-                    )
+                    total_trees = count_trees(image_path=saved_image)
 
                     # prepare params for weather
                     # read fire frames and smoke
@@ -78,17 +60,22 @@ def illuminate():
                     # read temperature and humidity
                     temperature, humidity = read_th(port=DHT_PORT)
 
+                    data = {
+                        "temperature": temperature,
+                        "humidity": humidity,
+                        "fire_status":fire_status,
+                        "tree_population": total_trees
+                    }
+
                     # store resource data
-                    store_weather_updates(
-                        temperature=temperature,
-                        humidity=humidity,
-                        fire_status=fire_status
-                    )
+                    response = save_data(params=data)
 
-                    # Free up space by removing the image
-                    delete_file(saved_image)
-
-                    print("Data saved")
+                    if response["status"] == True:
+                        print(response["message"])
+                        # Free up space by removing the image
+                        delete_file(saved_image)
+                    else:
+                        print("Something went wrong!")
 
                     # start timeout again
                     camera_active_time = 0
